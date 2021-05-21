@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                <% if (config.subtitle && config.subtitle.length > 0) { %>
+                <%= config.subtitle %>
+                <% } else { %>
+                    subtitle
+                <% } %>
+            </div>
+
+            <div class="description center-align">
+                <% if (theme.subtitle.enable) { %>
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: ['<%= theme.subtitle.sub1 %>','<%= theme.subtitle.sub2 %>'],
+                        startDelay: <%= theme.subtitle.startDelay %>,
+                        typeSpeed: <%= theme.subtitle.typeSpeed %>,
+                        loop: <%= theme.subtitle.loop %>,
+                        backSpeed: <%= theme.subtitle.backSpeed %>,
+                        showCursor: <%= theme.subtitle.showCursor %>
+                    });
+                </script>
+                <% } else { %>
+                    <%= config.description %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% if (theme.banner.enable) { %>
+<!--    原始策略-->
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/banner/') %>" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+
+</script>
+<!--    原始策略-->
+<!--    修改策略-->
+<!--<script>-->
+<!--    // $('.bg-cover').css('background-image', 'url(https://gitee.com/cungudafa/source/raw/master/img/bg/hyo/1.png)');-->
+<!--    // $('.bg-cover').css('background-image', 'url(https://bing.rthe.net/wallpaper)');-->
+<!--    // 随机获取一张图片-->
+<!--    $('.bg-cover').css('background-image', 'url(<%- theme.featureImages[Math.floor(Math.random() * theme.featureImages.length + 1)-1] %>)');-->
+<!--    // $('.bg-cover').css('background-image', 'url(https://api.abcyun.co/api/others/randacgimage/token/5d8f31cf6a8ab)');-->
+<!--</script>-->
+<!--    修改策略-->
+<% } else { %>
+<script>
+    $('.bg-cover').css('background-image', 'url(<%- theme.jsDelivr.url %><%- url_for('/medias/banner/0.jpg') %>)');
+</script>
+<% } %>
