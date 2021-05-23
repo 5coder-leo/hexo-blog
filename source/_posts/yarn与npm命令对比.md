@@ -7,7 +7,7 @@ summary:
 tags: 
 - yarn
 - npm
-category: 大前端
+category: 大前端(杂识)
 ---
 
 # yarn与npm命令对比

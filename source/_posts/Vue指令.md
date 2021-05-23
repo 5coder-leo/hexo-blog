@@ -5,7 +5,7 @@ abbrlink: 44857
 date: 2021-05-20 06:27:27
 summary:
 tags: Vue
-category: 大前端
+category: 大前端(杂识)
 ---
 
 # Vue学习-指令
@@ -190,7 +190,7 @@ category: 大前端
 >       <title>Title</title>
 >   </head>
 >   <body>
->         
+>           
 >   <div id="app">
 >     <input type="text" v-model.lazy="msg">
 >     {{msg}}

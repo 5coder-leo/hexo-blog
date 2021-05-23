@@ -5,7 +5,7 @@ abbrlink: 19670
 date: 2021-05-20 06:27:56
 summary:
 tags: Vue
-category: 大前端
+category: 大前端(杂识)
 ---
 
 # Vue学习——生命周期

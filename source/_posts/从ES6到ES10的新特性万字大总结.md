@@ -5,7 +5,7 @@ abbrlink: 21044
 date: 2021-05-20 22:47:12
 summary:
 tags: ES6
-category: 大前端
+category: 大前端(杂识)
 ---
 
 # 从ES6到ES10的新特性万字大总结

@@ -5,7 +5,7 @@ abbrlink: 1929
 date: 2021-05-20 06:27:43
 summary:
 tags: Vue
-category: 大前端
+category: 大前端(杂识)
 ---
 
 # Vue——过滤器、键盘修饰符、动画等

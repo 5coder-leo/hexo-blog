@@ -5,7 +5,7 @@ abbrlink: 22356
 date: 2021-05-20 22:38:31
 summary:
 tags: ES6
-category: 大前端
+category: 大前端(杂识)
 ---
 
 # es6扩展运算符
