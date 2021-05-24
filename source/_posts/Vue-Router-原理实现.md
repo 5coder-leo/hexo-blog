@@ -454,19 +454,114 @@ nginx服务器会判断当前请求的页面服务器上不存在，它会把单
 
 ## 9.VueRouter 实现原理
 
+vue-router有两种模式，一种是hash模式，另外一种是history模式，此处使用history模式来模拟，hash模式可以自己实现，差别很小。
 
+在模拟实现vue-router时会用到vue的一些基本概念，例如：
+
+- 插件
+- 混入mixin
+- Vue.observable()
+- 插槽
+- render函数
+- 运行时和完整版的Vue
+
+### Hash模式
+
+URL中 `#` 后面的内容作为路径地址，可以直接通过`location.url()`来切换URL地址，如果只改变路径中 `#` 后面的内容，浏览器不会向服务器请求对应的地址，但是会将该地址记录至访问历史中。
+
+当hash改变后，需要监听hash的变化并做相应的处理，只需要监听`hashchange`事件。当hash改变后，会触发`hashchange`事件，在该事件记录当前的路由地址并找到该路径对应的组件然后重新渲染。
+
+### History模式
+
+history模式的路径就是一个普通的url，调用`history.pushState()`方法来改变地址栏，`pushState`方法仅仅改变当前地址栏并保存到浏览器的访问历史中，并不会真正的跳转到指定路径去向服务器请求。
+
+通过监听`popstate`事件，可以监听到浏览器历史操作的变化。在`popstate`事件的处理函数中，可以记录改变后的地址。需要注意的是，当调用`pushState`或`replaceState`时并不会触发该事件。当点击浏览器的前进和后退按钮的时候，或者调用`history.back()`或`history.forword()`方法时，该事件才会被触发。当地址改变之后，根据当前路由地址找到对应组件重新渲染。
 
 ## 10.VueRouter 模拟实现-分析
 
+```js
+// router/index.js
+// 注册插件 Vue.use()接受两种参数：
+// 1.函数：Vue.use()内部直接调用函数
+// 2.对象: Vue.use()内部调用对象的install方法
+Vue.use(VueRouter)
+// 创建路由对象，后续模拟时需要创建静态的install方法
+const router = new VueRouter({
+    routes: [
+        {name: 'home', path: '/', component: homeComponent}
+    ]
+})
 
+
+// main.js
+// 创建Vue实例，注册router对象
+new Vue({
+    router,
+    render: h => h(App)
+}).$mount('#app')
+```
+
+![](https://i.loli.net/2021/05/24/V9dtQF68YLa5rzX.png)
 
 ## 11.VueRouter-install
 
-
+```js
+let _Vue = null
+export default class VueRouter{
+    // 静态方法install，Vue.use()调用install方法时会传入两个参数：
+    // 一个是Vue构造函数
+    // 另一个个是可选的选项对象
+    static install(Vue) {
+        // 1. 判断当前插件是否被安装
+        if (VueRouter.install.installed) {
+            return
+        }
+        VueRouter.install.installed = true
+        // 2. 把Vue的构造函数记录在全局
+        // 把vue的构造函数记录到全局变量中，因为当前的install方法是一个静态方法，在这个静态方法中，接收的一个
+        // 参数Vue的构造函数，将来在Vue中的一些实例方法中要使用这个Vue的构造函数。
+        // 比如创建router-link和router-view这两个组件时调用vue.component()来创建，所以需要把Vue的构造函数给他记录到全局变量中
+        _Vue = Vue
+        // 3. 把创建Vue实例时传入的router对象注入到Vue实例
+        // 把创建vue实例时传入的router对象，注入到所有的Vue实例上，之前所使用的this.$router就是在这个时候注入到Vue实例上的，
+        // 所有的组件也都是vue的实例
+        // _Vue.prototype.$router = this.$options.router  // 此时通过VueRouter.install()来调用，此时this指向VueRouter这个类，而不是Vue实例
+        _Vue.mixin({
+            beforeCreate() {
+                // 此时能获取到Vue实例，this的指向为Vue实例
+                if (this.$options.router) {  // 判断的作用是防止所有的组件都执行beforeCreate函数去注如
+                    _Vue.prototype.$router = this.$options.router  // 从传入的选项中获取router属性
+                }
+            }
+        })
+    }
+}
+```
 
 ## 12.VueRouter-构造函数
 
+构造函数需要接收一个参数options对象，其返回值是VueRouter对象。构造函数中需要初始化三个属性，分别是options、routeMap、data属性。data是一个响应式的对象，因为data中要存储当前的路由地址，当路由变化的时候要自动加载组件，所以data需要设置成响应式的对象。
 
+```js
+let _Vue = null
+export default class VueRouter {
+    // 静态方法install，Vue.use()调用install方法时会传入两个参数：...
+    static install(Vue) {...}
+
+    constructor(options) {
+        this.options = options  // 记录构造函数中传入的选项options
+        // 作用是将options中传入的路由规则-routes解析出来，存储到routeMap对象中，routeMap对象是键值对的形式，
+        // 键为路由地址，值为路由组件，在router-view组件中会根据当前的路由地址来routeMap里边找到对应的组件，把它渲染到浏览器中。
+        this.routeMap = {}
+        
+        // data是响应式的对象,其中有属性current，用来记录当前的路由地址。默认情况下当前的路由地址是'/',就是根目录。
+        // Vue提供了一个方法vue.observable,该方法的作用是用来创建响应式对象。使用observable方法创建的响应式的对象可以直接用在渲染函数或者计算属性。
+        this.data = _Vue.observable({
+            current: '/'
+        })
+    }
+}
+```
 
 ## 13.VueRouter-createRouteMap
 
