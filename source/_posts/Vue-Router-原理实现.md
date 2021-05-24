@@ -565,17 +565,137 @@ export default class VueRouter {
 
 ## 13.VueRouter-createRouteMap
 
+对比类图，上面已经完成了三个属性this.options、this.data、this.routeMap的初始化以及install()方法，这里来完成createRouteMap()方法。该方法的作用是将this.optons中的routes遍历，取出其中的path作为this.routeMap的键，取出其中的component作为this.routeMap的值，代码如下：
 
+```js
+let _Vue = null
+export default class VueRouter {
+    // 静态方法install，Vue.use()调用install方法时会传入两个参数：...
+    static install(Vue) {...}
+    
+	// 初始化属性
+    constructor(options) {...}
+    
+    // 遍历所有路由规则，把路由规则解析成键值对的形式，并存储到routeMap中
+    createRouteMap() {
+        this.options.routes.forEach(route => {
+            this.routeMap[route.path] = route.component  // 键为route中的path，值为route中的component
+        })
+    }
+}
+```
 
 ## 14.VueRouter-router-link
 
+```js
+let _Vue = null
+export default class VueRouter {
+    // 静态方法install，Vue.use()调用install方法时会传入两个参数：...
+    static install(Vue) {...}
+    
+	// 初始化属性
+    constructor(options) {...}
+    
+    // 遍历所有路由规则，把路由规则解析成键值对的形式，并存储到routeMap中
+    createRouteMap() {...}
+    
+    // 创建initComponent方法，用来创建router-link组件。
+    initComponent(Vue) {  // 传入Vue构造器，减少对外部_Vue的依赖
+        // 使用Vue.component方法创建组件
+        Vue.component('router-link',{
+            props: {
+                to: String
+            },
+            template: '<a :href="to"><slot></slot></a>'  // 使用:href绑定to的值，使用slot插槽用于放置router-link中间的内容
+        })
+    }
+}
+```
 
+initComponent方法创建完成后进行测试，测试时需要先执行createRouteMap方法和initComponent方法，在静态方法install中，当插件注册完成时来立即调用初始化方法（`_Vue.prototype.$router = this.$options.router`）。创建init方法，包装createRouteMap方法和initComponent方法，便于在install方法中调用。
+
+```js
+let _Vue = null
+export default class VueRouter {
+    // 静态方法install，Vue.use()调用install方法时会传入两个参数：...
+    static install(Vue) {
+        ...
+        if (this.$options.router) {  // 判断的作用是防止所有的组件都执行beforeCreate函数去注如
+        	_Vue.prototype.$router = this.$options.router  // 从传入的选项中获取router属性
+            this.$options.router.init()  // ----通过调用init方法来调用createRouteMap方法和initComponent方法
+        }
+    }
+    
+	// 初始化属性
+    constructor(options) {...}
+    
+    // 包装createRouteMap方法和initComponent方法，便于在install方法中调用
+    init() {
+        this.createRouteMap()
+        this.initComponent(_Vue)  // 需要传入Vue的构造函数，此处直接传入全局变量_Vue
+    }
+    
+    // 遍历所有路由规则，把路由规则解析成键值对的形式，并存储到routeMap中
+    createRouteMap() {...}
+
+    // 创建initComponent方法，用来创建router-link组件。
+    initComponent(Vue) {  // 传入Vue构造器，减少对外部_Vue的依赖
+        // 使用Vue.component方法创建组件
+        Vue.component('router-link',{
+            props: {
+                to: String
+            },
+            template: '<a :href="to"><slot></slot></a>'  // 使用:href绑定to的值，使用slot插槽用于放置router-link中间的内容
+        })
+    }
+}
+```
+
+然后修改router/index.js中导入VueRouter，将官方提供的`vue-router`改为自己实现的VueRouter。
+
+```js
+// import VueRouter from 'vue-router'
+import VueRouter from '../VueRouter'
+```
+
+命令行运行`yarn serve`，启动浏览器发现两个错误，第一个是运行时版本和完整版本的错误，错误内容：
+
+> ![](https://i.loli.net/2021/05/25/M6PBIQpJgCfFdWn.png)
+>
+> 你正在使用的是只包含运行时版本的，没有模板编辑器不可用，你可以使用预编译把模板编译成render函数或者使用包含编译器版本的内容
+
+第二个错误是router-view组件错误，因为还没有创建router-view组件，暂时不理会。
+
+Vue的构件版本
+
+- 运行时版：不支持template模板，需要打包的时候提前编译
+- 完整版：包含运行时和编译器，体积比运行时版大10k左右，程序运行的时候把template模板转换成为render函数
+
+下面使用两种方法解决这个问题。
 
 ## 15.VueRouter-完整版的 Vue
 
+使用完整版Vue解决上面提到的Vue运行时版本的错误。
 
+![](https://i.loli.net/2021/05/25/vdp6mVE3ICloFU4.png)
+
+找到runtimeCompiler选项
+
+![](https://i.loli.net/2021/05/25/yAE6NadFGklMfXW.png)
+
+接着在项目的根目录创建vue.config.js，内容如下，之后重启项目，回到浏览器，发现第一个运行时版本的错误以及消失了。打开Element发现Home和About也都被渲染为a链接。
+
+```js
+module.export {
+    runtimeCompiler: true
+}
+```
+
+![](https://i.loli.net/2021/05/25/D5qrEu1Jgem4vlT.png)
 
 ## 16.VueRouter-render
+
+
 
 ## 17.VueRouter-router-view
 
