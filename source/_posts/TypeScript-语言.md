@@ -4,7 +4,7 @@ tags: TypeScript
 category: 大前端
 abbrlink: 50148
 date: 2021-05-19 22:54:34
-top: true
+top: false
 ---
 
 # TypeScript语言-前置知识

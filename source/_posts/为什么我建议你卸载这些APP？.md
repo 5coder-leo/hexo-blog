@@ -7,8 +7,8 @@ tags: 鸡汤
 category: 鸡汤
 password:
 keywords: 自律
-top: true
-cover: true
+top: false
+cover: false
 ---
 
 作者 | 鸣哥 来源丨张小鸣

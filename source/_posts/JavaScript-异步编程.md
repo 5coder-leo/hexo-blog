@@ -4,7 +4,7 @@ tags: JavaScript
 category: 大前端
 abbrlink: 6342
 date: 2021-05-19 22:31:03
-cover: true
+cover: false
 ---
 
 ## JavaScript异步编程

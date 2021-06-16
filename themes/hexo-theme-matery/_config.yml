@@ -580,7 +580,7 @@ daovoice:
 
 # Tidio online contact
 tidio:
-  enable: true
+  enable: false
   public_key: scy6k7tmwlupholqzv7fynlbdscdztb1
 
 # 腾讯兔小巢，见https://txc.qq.com/
@@ -606,7 +606,7 @@ ribbon:
 
 # 背景动态彩带.
 ribbon_dynamic:
-  enable: true
+  enable: false
 
 # sharejs文章分享模块.
 # 支持顺序，可选项目为twitter, facebook, google, qq, qzone, wechat, weibo, douban, linkedin.

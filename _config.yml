@@ -148,7 +148,15 @@ abbrlink:
   alg: crc16 #算法选项：crc16丨crc32
   rep: dec #输出进制：dec为十进制，hex为十六进制
 
+
 lazyload:
   enable: false  # 是否开启图片懒加载
   onlypost: true  # 是否只对文章的图片做懒加载
   loadingImg: # eg ./images/loading.gif
+
+# 图片水印
+watermark:
+  enable: false
+  textEnable: true
+  rotate: -45
+  gravity: centre
