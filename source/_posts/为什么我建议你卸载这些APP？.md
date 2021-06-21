@@ -45,7 +45,7 @@ cover: false
 
 今天分享这篇文章，就来聊聊这个话题，或许看完你就会明白，为什么要建议你卸载这些APP了。
 
-![](https://i.loli.net/2021/05/23/rIMOzVTe4C8pd92.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/rIMOzVTe4C8pd92.png)
 
 **01.**
 
@@ -89,7 +89,7 @@ cover: false
 
 虽然有时候也会振作一下，但挣扎几下便放弃治疗。
 
-![](https://i.loli.net/2021/05/23/mza3tyZWRODEk8M.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/mza3tyZWRODEk8M.png)
 
 **02.**
 
@@ -113,7 +113,7 @@ cover: false
 
 不信你看看下面这位读者，反复的「安装—卸载」游戏，也很难静下心来看书。
 
-![](https://i.loli.net/2021/05/23/t1kiZmJ7Ra23jAK.jpg)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/t1kiZmJ7Ra23jAK.jpg)
 
 **即使他把所有娱乐软件卸载了，注意力也只会从游戏转移到朋友圈。**
 
@@ -139,7 +139,7 @@ cover: false
 
 **在这个心浮气躁的时代，能够静下心来阅读长文的人，比那些只关注15s短视频的人，大概率要优秀。**
 
-**![](https://i.loli.net/2021/05/23/yvGr539zX41Bl7I.png)**
+**![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/yvGr539zX41Bl7I.png)**
 
 **04.**
 
@@ -183,7 +183,7 @@ ok，那么该如何改变这种状态呢？
 
 一段时间后，你就会恢复低频刺激的体质。
 
-![](https://i.loli.net/2021/05/23/eNDpmUG3WRghHzF.jpg)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/eNDpmUG3WRghHzF.jpg)
 
 **05.**
 

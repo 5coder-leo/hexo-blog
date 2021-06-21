@@ -78,23 +78,23 @@ console.log('global end')
 
 分析：
 
-> 首先分析代码结构，本段代码为异步模式，js在读取到代码时，先将一个（anonymous）匿名函数放到调用栈。
+> 首先分析代码结构，本段代码为异步模式，js在读取到代码时，先将一个（`anonymous`）匿名函数放到调用栈。
 >
-> 将第一行console.log('global begin')压入调用栈并执行后弹出，此时控制台打印global begin；
+> 将第一行`console.log('global begin')`压入调用栈并执行后弹出，此时控制台打印`global begin`；
 >
-> 程序到setTimeout时，首先将setTimeout(timer1)压入调用栈，在web API线程放入timer1计时器，倒计时1.8s，随后将setTimeout(timer1)弹出调用栈；
+> 程序到`setTimeout`时，首先将`setTimeout(timer1)`压入调用栈，在web API线程放入timer1计时器，倒计时1.8s，随后将`setTimeout(timer1)`弹出调用栈；
 >
-> 同上步，将setTimeout(timer2)压入调用栈，web API线程放入timer2计时器，倒计时1s，随后将setTimeout(timer2)弹出调用栈；
+> 同上步，将`setTimeout(timer2)`压入调用栈，web API线程放入`timer2`计时器，倒计时1s，随后将`setTimeout(timer2)`弹出调用栈；
 >
-> 随后将console.log('global end')压入调用栈并执行后弹出调用栈，代码执行完毕，将anonymous弹出调用栈；
+> 随后将`console.log('global end')`压入调用栈并执行后弹出调用栈，代码执行完毕，将`anonymous`弹出调用栈；
 >
-> web API将timer1与timer2依次放入事件队列，此时timer2优先倒计时完毕，进入调用栈，然后执行内部代码。将console.log('timer2 invoke')压入调用栈并执行后弹出。
+> web API将`timer1`与`timer2`依次放入事件队列，此时`timer2`优先倒计时完毕，进入调用栈，然后执行内部代码。将`console.log('timer2 invoke')`压入调用栈并执行后弹出。
 >
-> 随后遇setTimeout(inner),将其压入调用栈并在Web API加入inner计时器，倒计时1s。setTimeout(inner)弹出调用栈。
+> 随后遇`setTimeout(inner)`,将其压入调用栈并在Web API加入`inner`计时器，倒计时1s。`setTimeout(inner)`弹出调用栈。
 >
-> 此时随倒计时，timer1倒计时完毕，程序进入timer1内部，将console.log('timer1 invoke')压入调用栈并执行后弹出。
+> 此时随倒计时，`timer1`倒计时完毕，程序进入`timer1`内部，将`console.log('timer1 invoke')`压入调用栈并执行后弹出。
 >
-> 随后inner()计时器进入任务队列，在倒计时结束后，压入调用栈并执行后弹出。至此，程序执行完毕。
+> 随后`inner()`计时器进入任务队列，在倒计时结束后，压入调用栈并执行后弹出。至此，程序执行完毕。
 
 ### 3.回调函数
 
@@ -136,15 +136,15 @@ $.get('url1', function (data1) {
 })
 ```
 
-因此提出Promise承诺，即在回调函数中，承诺在异步完成后下一步干什么。
+因此提出`Promise`承诺，即在回调函数中，承诺在异步完成后下一步干什么。
 
-Promise存在三种状态，及承诺开始pending，承诺兑现fulfilled以及承诺失败rejected。并且，承诺的状态一旦确定就不可在被改变，即当状态为fulfilled时，此promise的状态就不可再变为rejected，反之同样。
+`Promise`存在三种状态，及承诺开始`pending`，承诺兑现`fulfilled`以及承诺失败`rejected`。并且，承诺的状态一旦确定就不可在被改变，即当状态为`fulfilled`时，此`promise`的状态就不可再变为`rejected`，反之同样。
 
-fulfilled与rejected存在onFulfilled和onRejected状态。
+`fulfilled`与`rejected`存在`onFulfilled`和`onRejected`状态。
 
-- 什么是promise?
-- promise诞生的意义是什么，为什么会有promise?
-- promise的Api有哪些?
+- 什么是`promise`?
+- `promise`诞生的意义是什么，为什么会有`promise`?
+- `promise`的Api有哪些?
 - 如何使用这些Api呢？（mdn有详细的用法，详细的不能太详细）
-- 终极解决方案async/await的使用！
+- 终极解决方案`async`/`await`的使用！
 - 手写一个promise吧！

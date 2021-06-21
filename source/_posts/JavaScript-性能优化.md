@@ -50,7 +50,7 @@ fn()
 
 上述函数体内定义一个数组，数组长度足够大，为了当前函数在调用的时，程序可以向内存申请比较大的内存空间。执行函数过程中，我们使用性能检测工具，我们会发现，内存变化如下，内存持续升高，且并没有回落，这就是**内存泄漏**。内存泄漏会导致我们的页面处于卡顿状态，因此需要对内存进行人为管理。
 
-![](https://i.loli.net/2021/05/19/1ygFrKDCSvhGX6m.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1ygFrKDCSvhGX6m.png)
 
 
 
@@ -118,12 +118,12 @@ console.log(obj)
 
 **可达对象图示**
 
-![](https://i.loli.net/2021/05/19/dnkGj8bH4vzoZCp.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/dnkGj8bH4vzoZCp.png)
 
 
 如果我们在代码中做一些操作，比如使用delete将obj上的o1的应用以及o2中对obj1的应用删除掉，那么出现下面的情况：
 
-![](https://i.loli.net/2021/05/19/WgRhFJ7xmadZzfu.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/WgRhFJ7xmadZzfu.png)
 
 
 
@@ -206,7 +206,7 @@ console.log(obj)
 - 遍历所有对象清除没有标记对象
 - 回收相应的空间
 
-![](https://i.loli.net/2021/05/19/EbjthkT2PHoQWar.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/EbjthkT2PHoQWar.png)
 
 
 
@@ -228,8 +228,8 @@ console.log(obj)
 - 标记整理可以看作是标记清除的增强
 - 标记阶段的操作和标记清除一致
 - **清除阶段会先执行整理，移动对象位置**
-  ![](https://i.loli.net/2021/05/19/fix37uO2hUNelFv.png)
-  ![](https://i.loli.net/2021/05/19/YEVdhFxWa9CJPHw.png)
+  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/fix37uO2hUNelFv.png)
+  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/YEVdhFxWa9CJPHw.png)
 
 
 优缺点：该算法可以有效的利用堆，但是整理需要花比较多的时间成本
@@ -252,7 +252,7 @@ console.log(obj)
 
 V8 使用了分代和大数据的内存分配，在回收内存时使用精简整理的算法标记未引用的对象，然后消除没有标记的对象，最后整理和压缩那些还未保存的对象，即可完成垃圾回收。
 
-![](https://i.loli.net/2021/01/06/UDEPWurlJf38TgN.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/UDEPWurlJf38TgN.png)
 
 
 **V8中常用的GC算法**
@@ -269,7 +269,7 @@ V8 使用了分代和大数据的内存分配，在回收内存时使用精简�
 >
 > **年轻分代中的对象有机会晋升为年老分代，条件主要有两个：一个是对象是否经历过Scavenge回收，一个是To空间的内存占用比超过限制。**
 
-![](https://i.loli.net/2021/05/19/8MIBQo1xF6SYPz4.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/8MIBQo1xF6SYPz4.png)
 
 
 V8**内存分配**
@@ -314,7 +314,7 @@ V8**内存分配**
 
 **增量标记优化垃圾回收**
 
-![](https://i.loli.net/2021/05/19/15sl9QVXnHtSxwo.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/15sl9QVXnHtSxwo.png)
 
 图示中，程序在标记阶段被暂停运行，等待标记完成自动运行，当遇到大块需要标记的对象时，程序需要暂停很长一段时间，对用户体验很不友好，因此采用增量标记，将一大块分解为多个小块进行标记，减少每次程序暂停的时长，优化用户体验。最后标记完成后统一进行回收。
 
@@ -374,13 +374,13 @@ Performance使用步骤为：
 
 记录JavaScript内存（**JavaScript堆占用的内存，表示界面中所有可达对象占用的内存**）及内存占用空间（**原生内存，DOM节点占用的内存**），点击按钮，记录每次内存的变化。
 
-![](https://i.loli.net/2021/01/06/SPLj7pfv2G8uIgr.gif)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/SPLj7pfv2G8uIgr.gif)
 
 #### 3.2Timeline记录内存
 
 上述浏览器任务管理器更多的是用于判断当前脚本是否存在内存问题，而不能具体定位到问题。我们使用Timeline时间线记录内存变化，更精确的记录到内存变化。
 
-![](https://i.loli.net/2021/05/19/R7IQYzxwmM5WTnK.gif)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/R7IQYzxwmM5WTnK.gif)
 
 
 #### 3.3堆快照查找分离DOM
@@ -391,7 +391,7 @@ Performance使用步骤为：
 - 垃圾对象时的DOM节点（当前DOM从存活的DOM树上分离，且js中没有应用这个DOM）
 - 分离状态的DOM节点（当前DOM节点从当前DOM树分离，但js中还在应用它）
 
-![](https://i.loli.net/2021/05/19/sG2P5SjBt6xdKRU.gif)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/sG2P5SjBt6xdKRU.gif)
 
 
 在点击按钮后，DOM中生成了分离的DOM，造成内存空间的浪费，因此我们需要将代码中的temEle置空，这样让GC对垃圾进行回收即可。
@@ -418,7 +418,7 @@ Performance使用步骤为：
 - 本质上就是采集大量的执行脚本进行数学统计和分析
 - 使用基于Benchmark.js的https://jsbench.me/使用
 
-![](https://i.loli.net/2021/01/06/dK9hqBWRvkMaZEy.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/dK9hqBWRvkMaZEy.png)
 
 
 代码需要优化的原因：
@@ -471,7 +471,7 @@ fn()
 
 测试结果：
 
-![](https://i.loli.net/2021/05/19/IHKBSgCf3hk5eT7.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/IHKBSgCf3hk5eT7.png)
 
 
 ```js
@@ -487,18 +487,48 @@ for (let i = 0; i < 1000; i++) {
 
 ```
 
-![](https://i.loli.net/2021/01/06/YCe95UdsnzbRIGy.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/YCe95UdsnzbRIGy.png)
 
 
 **缓存全局变量**代码演示：
 
 ```html
-<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>缓存全局变量</title></head><body>  <input type="button" value="btn" id="btn1">  <input type="button" value="btn" id="btn2">  <input type="button" value="btn" id="btn3">  <input type="button" value="btn" id="btn4">  <p>1111</p>  <input type="button" value="btn" id="btn5">  <input type="button" value="btn" id="btn6">  <p>222</p>  <input type="button" value="btn" id="btn7">  <input type="button" value="btn" id="btn8">  <p>333</p>  <input type="button" value="btn" id="btn9">  <input type="button" value="btn" id="btn10">  <script>    function getBtn() {      let oBtn1 = document.getElementById('btn1')      let oBtn3 = document.getElementById('btn3')      let oBtn5 = document.getElementById('btn5')      let oBtn7 = document.getElementById('btn7')      let oBtn9 = document.getElementById('btn9')    }    function getBtn2() {      let obj = document      let oBtn1 = obj.getElementById('btn1')      let oBtn3 = obj.getElementById('btn3')      let oBtn5 = obj.getElementById('btn5')      let oBtn7 = obj.getElementById('btn7')      let oBtn9 = obj.getElementById('btn9')    }  </script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缓存全局变量</title></head>
+<body><input type="button" value="btn" id="btn1"> <input type="button" value="btn" id="btn2"> <input type="button"
+                                                                                                     value="btn"
+                                                                                                     id="btn3"> <input
+        type="button" value="btn" id="btn4">
+<p>1111</p>  <input type="button" value="btn" id="btn5"> <input type="button" value="btn" id="btn6">
+<p>222</p>  <input type="button" value="btn" id="btn7"> <input type="button" value="btn" id="btn8">
+<p>333</p>  <input type="button" value="btn" id="btn9"> <input type="button" value="btn" id="btn10">
+<script>    function getBtn() {
+  let oBtn1 = document.getElementById('btn1')
+  let oBtn3 = document.getElementById('btn3')
+  let oBtn5 = document.getElementById('btn5')
+  let oBtn7 = document.getElementById('btn7')
+  let oBtn9 = document.getElementById('btn9')
+}
+
+function getBtn2() {
+  let obj = document
+  let oBtn1 = obj.getElementById('btn1')
+  let oBtn3 = obj.getElementById('btn3')
+  let oBtn5 = obj.getElementById('btn5')
+  let oBtn7 = obj.getElementById('btn7')
+  let oBtn9 = obj.getElementById('btn9')
+}  </script>
+</body>
+</html>
 ```
 
 测试结果：
 
-![](https://i.loli.net/2021/01/06/qkaxNHsS9b51AV7.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/qkaxNHsS9b51AV7.png)
 
 
 ### 3.通过原型对象添加附加方法
@@ -506,12 +536,23 @@ for (let i = 0; i < 1000; i++) {
 代码演示：
 
 ```js
-var fn1 = function() {  this.foo = function() {    console.log(11111)  }}let f1 = new fn1()var fn2 = function() {}fn2.prototype.foo = function() {  console.log(11111)}let f2 = new fn2()
+var fn1 = function () {
+  this.foo = function () {
+    console.log(11111)
+  }
+}
+let f1 = new fn1()
+var fn2 = function () {
+}
+fn2.prototype.foo = function () {
+  console.log(11111)
+}
+let f2 = new fn2()
 ```
 
 测试结果：
 
-![](https://i.loli.net/2021/05/19/gB4rej8DLWpXE1V.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/gB4rej8DLWpXE1V.png)
 
 
 ### 4.避开闭包陷阱
@@ -525,7 +566,20 @@ var fn1 = function() {  this.foo = function() {    console.log(11111)  }}let f1 
 代码示例：
 
 ```js
-function test(func) {  console.log(func())}function test2() {  var name = 'lg'  return name}test(function() {  var name = 'lg'  return name})test(test2)
+function test(func) {
+  console.log(func())
+}
+
+function test2() {
+  var name = 'lg'
+  return name
+}
+
+test(function () {
+  var name = 'lg'
+  return name
+})
+test(test2)
 ```
 
 ### 5.避免属性访问方法使用
@@ -536,12 +590,29 @@ function test(func) {  console.log(func())}function test2() {  var name = 'lg'  
 代码示例：
 
 ```js
-function Person() {  this.name = 'icoder'  this.age = 18  this.getAge = function() {    return this.age  }}const p1 = new Person()const a = p1.getAge()function Person() {  this.name = 'icoder'  this.age = 18}const p2 = new Person()const b = p2.age
+function Person() {
+  this.name = 'icoder'
+  this.age = 18
+  this.getAge = function () {
+    return this.age
+  }
+}
+
+const p1 = new Person()
+const a = p1.getAge()
+
+function Person() {
+  this.name = 'icoder'
+  this.age = 18
+}
+
+const p2 = new Person()
+const b = p2.age
 ```
 
 测试结果：
 
-![](https://i.loli.net/2021/01/06/DJc2S8mXkajpEtM.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/DJc2S8mXkajpEtM.png)
 
 
 ### 6.For循环优化及选择最优循环方法
@@ -549,12 +620,19 @@ function Person() {  this.name = 'icoder'  this.age = 18  this.getAge = function
 代码示例：
 
 ```js
-var arrList = []arrList[10000] = 'icoder'for (var i = 0; i < arrList.length; i++) {  console.log(arrList[i])}for (var i = arrList.length; i; i--) {  console.log(arrList[i])}
+var arrList = []
+arrList[10000] = 'icoder'
+for (var i = 0; i < arrList.length; i++) {
+  console.log(arrList[i])
+}
+for (var i = arrList.length; i; i--) {
+  console.log(arrList[i])
+}
 ```
 
 测试结果：
 
-![](https://i.loli.net/2021/05/19/Wxw3UcVpADs6IjO.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Wxw3UcVpADs6IjO.png)
 
 
 **选择最优循环方法**
@@ -562,12 +640,21 @@ var arrList = []arrList[10000] = 'icoder'for (var i = 0; i < arrList.length; i++
 代码示例：
 
 ```js
-var arrList = new Array(1, 2, 3, 4, 5)arrList.forEach(function(item) {  console.log(item)})for (var i = arrList.length; i; i--) {  console.log(arrList[i])}for (var i in arrList) {  console.log(arrList[i])}
+var arrList = new Array(1, 2, 3, 4, 5)
+arrList.forEach(function (item) {
+  console.log(item)
+})
+for (var i = arrList.length; i; i--) {
+  console.log(arrList[i])
+}
+for (var i in arrList) {
+  console.log(arrList[i])
+}
 ```
 
 测试结果（forEach效率最高）：
 
-![](https://i.loli.net/2021/05/19/tes9K4yoF3XQH6T.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/tes9K4yoF3XQH6T.png)
 
 
 ### 7.文档碎片优化节点添加、克隆优化节点操作
@@ -575,12 +662,32 @@ var arrList = new Array(1, 2, 3, 4, 5)arrList.forEach(function(item) {  console.
 代码示例：
 
 ```html
-<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>优化节点添加</title></head><body>  <script>    for (var i = 0; i < 10; i++) {      var oP = document.createElement('p')      oP.innerHTML = i       document.body.appendChild(oP)    }    const fragEle = document.createDocumentFragment()    for (var i = 0; i < 10; i++) {      var oP = document.createElement('p')      oP.innerHTML = i       fragEle.appendChild(oP)    }    document.body.appendChild(fragEle)  </script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优化节点添加</title></head>
+<body>
+<script>    for (var i = 0; i < 10; i++) {
+  var oP = document.createElement('p')
+  oP.innerHTML = i
+  document.body.appendChild(oP)
+}
+const fragEle = document.createDocumentFragment()
+for (var i = 0; i < 10; i++) {
+  var oP = document.createElement('p')
+  oP.innerHTML = i
+  fragEle.appendChild(oP)
+}
+document.body.appendChild(fragEle)  </script>
+</body>
+</html>
 ```
 
 测试结果：
 
-![](https://i.loli.net/2021/01/06/rvEJSaMpK26j54Z.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/rvEJSaMpK26j54Z.png)
 
 
 **克隆优化节点操作**
@@ -588,12 +695,31 @@ var arrList = new Array(1, 2, 3, 4, 5)arrList.forEach(function(item) {  console.
 代码示例：
 
 ```html
-<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>克隆优化节点操作</title></head><body>  <p id="box1">old</p>  <script>    for (var i = 0; i < 3; i++) {      var oP = document.createElement('p')      oP.innerHTML = i       document.body.appendChild(oP)    }    var oldP = document.getElementById('box1')    for (var i = 0; i < 3; i++) {      var newP = oldP.cloneNode(false)      newP.innerHTML = i       document.body.appendChild(newP)    }  </script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>克隆优化节点操作</title></head>
+<body><p id="box1">old</p>
+<script>    for (var i = 0; i < 3; i++) {
+  var oP = document.createElement('p')
+  oP.innerHTML = i
+  document.body.appendChild(oP)
+}
+var oldP = document.getElementById('box1')
+for (var i = 0; i < 3; i++) {
+  var newP = oldP.cloneNode(false)
+  newP.innerHTML = i
+  document.body.appendChild(newP)
+}  </script>
+</body>
+</html>
 ```
 
 测试结果：
 
-![](https://i.loli.net/2021/05/19/fzEUXm5dwyingl7.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/fzEUXm5dwyingl7.png)
 
 
 ### 8.直接量替换new Object
@@ -601,25 +727,68 @@ var arrList = new Array(1, 2, 3, 4, 5)arrList.forEach(function(item) {  console.
 代码示例：
 
 ```js
-var a = [1, 2, 3]var a1 = new Array(3)a1[0] = 1a1[1] = 2a1[2] = 3
+var a = [1, 2, 3]
+var a1 = new Array(3)a1[0] = 1a1[1] = 2a1[2] = 3
 ```
 
 测试结果：
-![](https://i.loli.net/2021/05/19/BUjOkDgVzJPSIT9.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/BUjOkDgVzJPSIT9.png)
 
 ### 9.堆栈中的JS执行过程
 
 ```js
-let a = 10;function foo(b) {    let a = 2;    function baz(c) {        console.log(a+b+c);    }    return baz}let fn = foo(2);fn(3);
+let a = 10;
+
+function foo(b) {
+  let a = 2;
+
+  function baz(c) {
+    console.log(a + b + c);
+  }
+
+  return baz
+}
+
+let fn = foo(2);
+fn(3);
 ```
 
-![](https://i.loli.net/2021/01/06/FgN4vncbWzUrQp9.jpg)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/FgN4vncbWzUrQp9.jpg)
 
 
 ### 10.减少判断层
 
 ```js
-function doSomething(part, chapter) {    const parts = ['ES2015', '工程化', 'Vue', 'Reach', 'Node'];    if (part) {        if (parts.includes(part)) {            console.log('属于当前课程')            if (chapter > 5) {                console.log('您需要提供VIP身份')            }        }    } else {        console.log('请确认模块信息')    }}doSomething('ES2015', 6)function doSomething2(part, chapter) {    const parts = ['ES2015', '工程化', 'Vue', 'Reach', 'Node'];    if (!part) {        console.log('确认模块信息')        return    }    if (!parts.includes(part)) return;    console.log('属于当前课程')    if (chapter > 5) {        console.log('您需要提供VIP身份')    }}doSomething2('ES2015', 6)
+function doSomething(part, chapter) {
+  const parts = ['ES2015', '工程化', 'Vue', 'Reach', 'Node'];
+  if (part) {
+    if (parts.includes(part)) {
+      console.log('属于当前课程')
+      if (chapter > 5) {
+        console.log('您需要提供VIP身份')
+      }
+    }
+  } else {
+    console.log('请确认模块信息')
+  }
+}
+
+doSomething('ES2015', 6)
+
+function doSomething2(part, chapter) {
+  const parts = ['ES2015', '工程化', 'Vue', 'Reach', 'Node'];
+  if (!part) {
+    console.log('确认模块信息')
+    return
+  }
+  if (!parts.includes(part)) return;
+  console.log('属于当前课程')
+  if (chapter > 5) {
+    console.log('您需要提供VIP身份')
+  }
+}
+
+doSomething2('ES2015', 6)
 ```
 
 ### 11.减少作用域链查找层级
@@ -627,12 +796,38 @@ function doSomething(part, chapter) {    const parts = ['ES2015', '工程化', '
 代码示例：
 
 ```js
-var name = 'zce';function foo() {    name = 'zce666'  // 这里的name是全局的    function baz() {        var age = 28        console.log(age)        console.log(name)    }    baz()}foo()var name = 'zce';function foo() {    var name = 'zce666'  // 这里的name是全局的    function baz() {        var age = 28        console.log(age)        console.log(name)    }    baz()}foo()
+var name = 'zce';
+
+function foo() {
+  name = 'zce666'  // 这里的name是全局的    
+  function baz() {
+    var age = 28
+    console.log(age)
+    console.log(name)
+  }
+
+  baz()
+}
+
+foo()
+var name = 'zce';
+
+function foo() {
+  var name = 'zce666'// 这里的name是全局的    
+  function baz() {
+    var age = 28
+    console.log(age)
+    console.log(name)
+  }
+
+  baz()
+}
+foo()
 ```
 
 测试结果：
 
-![](https://i.loli.net/2021/05/19/eFGblMkyauDAO8K.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/eFGblMkyauDAO8K.png)
 
 
 ### 12.减少数据读取次数
@@ -640,12 +835,32 @@ var name = 'zce';function foo() {    name = 'zce666'  // 这里的name是全局�
 代码示例：
 
 ```html
-<!DOCTYPE html><html lang="en"><head>	<meta charset="UTF-8">	<title>减少数据读取次数</title></head><body>	<div id="skip" class="skip"></div>	<script>		var oBox = document.getElementById('skip')		function hasEle(ele, cls) {				return ele.className === cls    }        function hasEle(ele, cls) {		    var className = ele.className		    return className === cls    }    console.log(hasEle(oBox, 'skip'))	</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>减少数据读取次数</title></head>
+<body>
+<div id="skip" class="skip"></div>
+<script>        var oBox = document.getElementById('skip')
+
+function hasEle(ele, cls) {
+  return ele.className === cls
+}
+
+function hasEle(ele, cls) {
+  var className = ele.className
+  return className === cls
+}
+
+console.log(hasEle(oBox, 'skip'))    </script>
+</body>
+</html>
 ```
 
 测试结果：
 
-![](https://i.loli.net/2021/05/19/53YtRCWn2o1jsaT.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/53YtRCWn2o1jsaT.png)
 
 
 ### 13.字面量与构造式
@@ -653,12 +868,23 @@ var name = 'zce';function foo() {    name = 'zce666'  // 这里的name是全局�
 代码示例：
 
 ```js
-var test = () => {    let obj = new Object();    obj.name = 'zce';    obj.age = '28';    obj.slogan = '我为前端而活'    return obj}var test = () => {    let obj = {        name: 'zce',        age : '28',        slogan: '喔喔前端而活'    }    return obj}console.log(test())
+var test = () => {
+  let obj = new Object();
+  obj.name = 'zce';
+  obj.age = '28';
+  obj.slogan = '我为前端而活'
+  return obj
+}
+var test = () => {
+  let obj = {name: 'zce', age: '28', slogan: '喔喔前端而活'}
+  return obj
+}
+console.log(test())
 ```
 
 测试结果：
 
-![](https://i.loli.net/2021/05/19/LUPtoS5zT64Nx8B.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/LUPtoS5zT64Nx8B.png)
 
 
 ### 14.减少循环体中活动
@@ -666,17 +892,65 @@ var test = () => {    let obj = new Object();    obj.name = 'zce';    obj.age = 
 代码示例：
 
 ```js
-var test = () => {    var i    var arr = ['zce', 28, '我为前端而活']    for (let i = 0; i < arr.length; i++) {        console.log(arr[i])    }}var test = () => {    var i    var arr = ['zce', 28, '我为前端而活']    var len = arr.length    for (let i = 0; i < len; i++) {        console.log(arr[i])    }}
+var test = () => {
+  var i
+  var arr = ['zce', 28, '我为前端而活']
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i])
+  }
+}
+var test = () => {
+  var i
+  var arr = ['zce', 28, '我为前端而活']
+  var len = arr.length
+  for (let i = 0; i < len; i++) {
+    console.log(arr[i])
+  }
+}
 ```
 
 测试结果：
 
-![](https://i.loli.net/2021/05/19/Lw4hojUnXibfu2x.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Lw4hojUnXibfu2x.png)
 
 ### 15.惰性函数与性能
 
 ```html
-<!DOCTYPE html><html lang="en"><head>	<meta charset="UTF-8">	<title>Title</title></head><body>	<button id="btn"></button>	<script>		var oBtn = document.getElementById('btn');		function foo() {        console.log(this)    }        function addEvent(obj, type, fn) {		    if (obj.addEventListener()) {		        obj.addEventListener(type, fn, false)		    } else if (obj.attachEvent) {		        obj.attachEvent('on'+type, fn)		    } else {		        obj['on' + type] = fn		    }    }    function addEvent(obj, type, fn) {        if (obj.addEventListener()) {            addEvent = obj.addEventListener(type, fn, false)        } else if (obj.attachEvent) {            addEvent = obj.attachEvent('on'+type, fn)        } else {            addEvent = obj['on' + type] = fn        }        return addEvent    }    	</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title></head>
+<body>
+<button id="btn"></button>
+<script>        var oBtn = document.getElementById('btn');
+
+function foo() {
+  console.log(this)
+}
+
+function addEvent(obj, type, fn) {
+  if (obj.addEventListener()) {
+    obj.addEventListener(type, fn, false)
+  } else if (obj.attachEvent) {
+    obj.attachEvent('on' + type, fn)
+  } else {
+    obj['on' + type] = fn
+  }
+}
+
+function addEvent(obj, type, fn) {
+  if (obj.addEventListener()) {
+    addEvent = obj.addEventListener(type, fn, false)
+  } else if (obj.attachEvent) {
+    addEvent = obj.attachEvent('on' + type, fn)
+  } else {
+    addEvent = obj['on' + type] = fn
+  }
+  return addEvent
+}        </script>
+</body>
+</html>
 ```
 
 ### 16.减少声明及语句数
@@ -684,7 +958,14 @@ var test = () => {    var i    var arr = ['zce', 28, '我为前端而活']    fo
 代码示例：
 
 ```js
-var test = () => {    let w = 200    let h = 300    return w * h}var test = () => {    return 200 * 300}
+var test = () => {
+  let w = 200
+  let h = 300
+  return w * h
+}
+var test = () => {
+  return 200 * 300
+}
 ```
 
 ### 17.采用事件绑定
@@ -692,6 +973,29 @@ var test = () => {    let w = 200    let h = 300    return w * h}var test = () =
 代码示例：
 
 ```html
-<!DOCTYPE html><html lang="en"><head>	<meta charset="UTF-8">	<title>Title</title></head><body><ul id="ul">	<li>Leo</li>	<li>28</li>	<li>我为前端而活</li></ul><script>	var list = document.querySelectorAll('li')	function showText(ev) {      console.log(ev.target.innerHTML)  }  for (let listElement of list) {		  item.onclick = showText  }    var oUl = document.getElementById('ul')	oUl.addEventListener('click', showText, true)</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title></head>
+<body>
+<ul id="ul">
+    <li>Leo</li>
+    <li>28</li>
+    <li>我为前端而活</li>
+</ul>
+<script>    var list = document.querySelectorAll('li')
+
+function showText(ev) {
+  console.log(ev.target.innerHTML)
+}
+
+for (let listElement of list) {
+  item.onclick = showText
+}
+var oUl = document.getElementById('ul')
+oUl.addEventListener('click', showText, true)</script>
+</body>
+</html>
 ```
 

@@ -10,7 +10,7 @@ keywords:
   - Snabbdom
 abbrlink: 17380
 date: 2021-06-04 05:37:23
-top:
+top: true
 cover:
 img: /medias/featureimages/18.jpg
 ---
@@ -73,7 +73,7 @@ img: /medias/featureimages/18.jpg
 
   jQuery开发的列表[demo](https://codesandbox.io/s/jq-demo-5i7qp?file=/index.html)，列表有三种功能：增加、排序、删除，三种功能增加渐变效果，在2s之内把透明度从0变为1。通过点击增加、排序、删除按钮，发现页面每次都需要闪烁，其内部是重新渲染所有列表，性能消耗较高
 
-  ![](https://i.loli.net/2021/06/04/izVHJKWlDroh2tT.gif)
+  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/izVHJKWlDroh2tT.gif)
 
 - 为了简化DOM的负责操作，于是出现了各种的MVVM框架，MVVM矿建解决了视图和状态的同步问题
 
@@ -83,7 +83,7 @@ img: /medias/featureimages/18.jpg
 
   Virtual DOM列表[案例演示](https://codesandbox.io/s/jq-demo-4hbyb?file=/index.html)，可以看到当点击增加时，只有列表第一条在变化，整个页面并没有闪烁。通过Virtual DOM可有效减少DOM操作，Virtual记录上一次状态。
 
-  ![](https://i.loli.net/2021/06/04/gDTbA1F7hZCS2oz.gif)
+  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/gDTbA1F7hZCS2oz.gif)
 
 - 参考GitHub上[virtual-dom](https://github.com/Matt-Esch/virtual-dom)的描述
 
@@ -100,7 +100,7 @@ img: /medias/featureimages/18.jpg
   - 原生应用(Weex/React Native)
   - 小程序(mpvue/uni-app)等
 
-![](https://i.loli.net/2021/06/04/5QhHaZcxpKoCDJl.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/5QhHaZcxpKoCDJl.png)
 
 ### 5.Virtual DOM库
 
@@ -197,7 +197,7 @@ img: /medias/featureimages/18.jpg
 
   > 注意：此时运行的话，项目会报错，提示找不到`init/h`模块，因为模块路径并不是`snabbdom/init`，这个路径是在package.json中的`exports`字段设置的，而我们使用的打包工具不支持`exports`这个字段，webpack4也不支持，webpack5支持该字段。
   >
-  > ![](https://i.loli.net/2021/06/04/fvRIz9ZgeTPwF1c.png)
+  > ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/fvRIz9ZgeTPwF1c.png)
   >
   > 该字段在导入`snabbdom/init`的时候回补全路径成`snabbdom/build/package/init.js`
 
@@ -277,13 +277,13 @@ let oldVnode = patch(app, vnode)
 
 命令行运行`yarn dev`，查看结果
 
-![](https://i.loli.net/2021/06/06/Yj5s46tyR73bPZc.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Yj5s46tyR73bPZc.png)
 
 再加一个小功能：假设页面上有一个按钮，当点击按钮时，把`id`是`container`的`div`改成Hello Snabbdom，并且更改类样式。
 
-![](https://i.loli.net/2021/06/06/lb7zgO1VPkB93mY.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/lb7zgO1VPkB93mY.png)
 
-结果演示：![](https://i.loli.net/2021/06/06/KV4UkexDc5uRtis.png)
+结果演示：![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/KV4UkexDc5uRtis.png)
 
 案例二：在`div`中创建两个子元素：`h`和`p`标签。
 
@@ -301,7 +301,7 @@ let app = document.querySelector('#app')
 let oldVNode = patch(app, vnode)
 ```
 
-![](https://i.loli.net/2021/06/06/luEnD57tcdWOeAs.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/luEnD57tcdWOeAs.png)
 
 拓展1：
 
@@ -330,7 +330,7 @@ setTimeout(() => {
 }, 2000)
 ```
 
-![](https://i.loli.net/2021/06/06/ZzFB7SoLud3VstD.gif)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/ZzFB7SoLud3VstD.gif)
 
 拓展2：
 
@@ -356,7 +356,7 @@ setTimeout(() => {
 }, 2000)
 ```
 
-![](https://i.loli.net/2021/06/06/XWG9SNfIaOwcbgy.gif)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/XWG9SNfIaOwcbgy.gif)
 
 ### 4.模块
 
@@ -420,7 +420,7 @@ let app = document.querySelector('#app')
 patch(app, vnode)
 ```
 
-![](https://i.loli.net/2021/06/06/L1sDmbwxZ7SnjqG.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/L1sDmbwxZ7SnjqG.png)
 
 ## 三、Snabbdom源码解析
 
@@ -663,7 +663,7 @@ patch(app, vnode)
     - 如果新的`VNode`有`children`，判断子节点是否有变化，判断子节点的过程使用的就是`diff`算法
 - `diff`过程只是进行同层级比较
 
-![](https://i.loli.net/2021/06/06/ykzGs5gIqB8DFa2.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/ykzGs5gIqB8DFa2.png)
 
 #### init
 
@@ -1057,7 +1057,7 @@ function addVnodes (
     - 设置DOM元素的`textContent`为`vnode.text`
   - 最后执行用户设置的`postpatch`钩子函数
 
-![](https://i.loli.net/2021/06/07/aSVb3ZNoyTWgeck.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/aSVb3ZNoyTWgeck.png)
 
 源码位置：src/package/init.ts
 
@@ -1125,7 +1125,7 @@ function patchVnode (oldVnode: VNode, vnode: VNode, insertedVnodeQueue: VNodeQue
 
   - 因此只需要找**同级别**的**子节点**一次比较，然后**再找下一级别的节点比较**，这样算法的时间复杂度为O(n)
 
-    ![](https://i.loli.net/2021/06/08/HOKszpbk76tA9yZ.png)
+    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/HOKszpbk76tA9yZ.png)
 
   - 在进行同级别节点比较的时候，首先会对新老节点数组的**开始和结尾**节点设置**标记索引**，遍历的过程中移动索引
 
@@ -1139,7 +1139,7 @@ function patchVnode (oldVnode: VNode, vnode: VNode, insertedVnodeQueue: VNodeQue
 
     - `oldEndVnode` / `newStartVnode`（旧结束节点 / 新开始节点）
 
-      ![](https://i.loli.net/2021/06/08/ZjSoAHM1vYNJCm5.png)
+      ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/ZjSoAHM1vYNJCm5.png)
 
   - 开始节点和结束节点比较，这两种情况类似
 
@@ -1152,7 +1152,7 @@ function patchVnode (oldVnode: VNode, vnode: VNode, insertedVnodeQueue: VNodeQue
 
     - 把旧开始和新开始索引往后移动`oldStartIdx++` / `oldEndIdx++`
 
-      ![](https://i.loli.net/2021/06/08/njXLUz5tsFNWvql.png)
+      ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/njXLUz5tsFNWvql.png)
 
   - `oldStartVnode` / `newEndVnode`（旧开始节点 / 新结束节点）相同
 

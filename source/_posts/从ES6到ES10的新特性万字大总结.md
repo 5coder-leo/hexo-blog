@@ -78,7 +78,7 @@ e = 70 // VM231:1 Uncaught TypeError: Assignment to constant variable.
 
 
 
-![img](https://i.loli.net/2021/05/20/xu1SIUeEoKasc7V.png)
+![img](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/xu1SIUeEoKasc7V.png)
 
 ## 3.类（Class）
 

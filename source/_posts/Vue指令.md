@@ -52,7 +52,7 @@ category: 大前端(杂识)
 </template>
 ```
 
-![](https://img-blog.csdnimg.cn/20210323152850534.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjEyMjM1NQ==,size_16,color_FFFFFF,t_70)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/20210323152850534.png)
 
 
 ## 2.v-show
@@ -190,7 +190,7 @@ category: 大前端(杂识)
 >       <title>Title</title>
 >   </head>
 >   <body>
->           
+>             
 >   <div id="app">
 >     <input type="text" v-model.lazy="msg">
 >     {{msg}}
@@ -259,7 +259,38 @@ category: 大前端(杂识)
 > **不要使用对象或数组之类的非基本类型值作为 `v-for` 的 `key`。请用字符串或数值类型的值。**
 >
 > ```html
-> <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Title</title></head><body><div id="app"><div> <label for="">ID:   <input type="text" v-model="id"></label> <label for="">Name:   <input type="text" v-model="name"> </label> <label for="">添加：   <input type="button" value="添加" @click="add"> </label></div><p v-for="item in list" :key="item.id"> <label for=""> <input type="checkbox"> </label> {{item.id}}------{{item.name}}</p></div><script src="vue.js"></script><script>let vm = new Vue({ el: '#app', data: {   id:'',   name:'',   list:[     {'id':1,'name':'李斯'},     {'id':2,'name':'嬴政'},     {'id':3,'name':'赵高'},     {'id':4,'name':'韩非子'},     {'id':5,'name':'荀子'},   ],   obj: {     name: 'Leo',     age: 28,     sex: 'male'   } }, methods: {   add(){     this.list.unshift({id:this.id, name:this.name})   } }})</script></body></html>
+> <!DOCTYPE html>
+> <html lang="en">
+> <head>
+>     <meta charset="UTF-8">
+>     <title>Title</title></head>
+> <body>
+> <div id="app">
+>     <div><label for="">ID: <input type="text" v-model="id"></label> <label for="">Name: <input type="text"
+>                                                                                                v-model="name"> </label>
+>         <label for="">添加： <input type="button" value="添加" @click="add"> </label></div>
+>     <p v-for="item in list" :key="item.id"><label for=""> <input type="checkbox"> </label>
+>         {{item.id}}------{{item.name}}</p></div>
+> <script src="vue.js"></script>
+> <script>let vm = new Vue({
+>   el: '#app',
+>   data: {
+>     id: '',
+>     name: '',
+>     list: [{'id': 1, 'name': '李斯'}, {'id': 2, 'name': '嬴政'}, {'id': 3, 'name': '赵高'}, {
+>       'id': 4,
+>       'name': '韩非子'
+>     }, {'id': 5, 'name': '荀子'},],
+>     obj: {name: 'Leo', age: 28, sex: 'male'}
+>   },
+>   methods: {
+>     add() {
+>       this.list.unshift({id: this.id, name: this.name})
+>     }
+>   }
+> })</script>
+> </body>
+> </html>
 > ```
 
 

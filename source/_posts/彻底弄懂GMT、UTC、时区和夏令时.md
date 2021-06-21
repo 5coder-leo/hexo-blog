@@ -82,7 +82,7 @@ UTC 比 GMT更精准，以原子时计时，适应现代社会的精确计时。
 
 
 
-![img](https://i.loli.net/2021/05/20/S4fRbqOoxJXg3Nj.jpg)
+![img](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/S4fRbqOoxJXg3Nj.jpg)
 
 
 
@@ -104,7 +104,7 @@ DST（Daylight Saving Time），夏令时又称夏季时间，或者夏时制。
 
 在施行夏令时的国家，一年里面有一天只有23小时（夏令时开始那一天），有一天有25小时（夏令时结束那一天），其他时间每天都是24小时。
 
-![img](https://i.loli.net/2021/05/20/HRT2InGFydZOeE9.jpg)
+![img](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/HRT2InGFydZOeE9.jpg)
 
 
 

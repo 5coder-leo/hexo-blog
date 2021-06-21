@@ -12,7 +12,7 @@ category: Git
 
 **为什么要进行版本控制？**  最简单的例子，当我们用文字处理软件工作时（如Word）时需要进行修改，而有时候又不确定修改的内容是不是需要的，因此会产生许多个文件，如图：  
 
-![img/v2-5baa32dc2504ef9f6a1fbc427f6370a9_b](https://i.loli.net/2021/05/20/uMiyGdlK5oNjr7J.jpg)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617191834286.png)
 
 每一个文件都是在之前的文件基础上进行微小的修改，久而久之，不但文件冗杂，而且还不清楚修改的内容是什么，是一种很杂乱的方式。
 
@@ -34,8 +34,7 @@ git设计简单，是完全分布式，允许成千上万个并行开发的分�
 
 git的三个工作区域，对应着三种状态：
 
-
-![img/v2-f3c1e1cc39be62f9ff2dc8f1654f98cd_b](https://i.loli.net/2021/05/20/BcNz6ulgRbY47rO.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617191854594.png)
 
 
  git 工作流程如下：    
@@ -163,26 +162,21 @@ $ git reset --hard 1c83e2a0
 在版本回退里，你可以回溯到之前的任意版本，而这些版本都是处于一条时间线上，这条时间线就是一个分支。
  默认的分支为master分支，本身可以看做一个指针，HEAD指针则指向master指针，如图：    
 
-![img/v2-2bdaaedcea49b643d9054b364fcc9d7b_b](https://i.loli.net/2021/05/20/xqTbYZVLBHgvUSO.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617191928000.png)
 
 每次提交都会多出一个节点，指针也随之移动。
  当我们创建新的分支时，也就创建了一个新的指针，我们通过命令将HEAD指针移到新指针上：  
 
-
-![img/v2-eaa71af7dbc7af4d88dd4269c0aadb94_b](https://i.loli.net/2021/05/20/wW73NTMyfGx81cm.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192002448.png)
 
 
 
 新提交一次后，新指针向前移动，master指针不变，这就产生了分支：
  我们可以将两条分支合并，之后可以删掉新分支。
 
-![img/v2-5e29021a13b221d13909abec8d7ff735_b](https://i.loli.net/2021/05/20/LzUaQ6nmJgcH8E1.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192018984.png)
 
-
-
-
-
-![img/v2-a1c29dbcd27b8b5be9899afbb2bb0b24_b](https://i.loli.net/2021/05/20/q9Y3DC4PpFKeSNI.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192039725.png)
 
 这样就完成了分支的合并。
 
@@ -278,15 +272,15 @@ SSH访问配置成功
 1.点击页面右上角的＋号，点击New repository按钮
 
 
-![img/v2-3cf6e399f56ab213b6626c3420fee410_b](E:\lagou\笔记整理\版本控制\img\v2-3cf6e399f56ab213b6626c3420fee410_b.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-3cf6e399f56ab213b6626c3420fee410_b.png)
 
-![img/v2-f518348e215125a7cf1e044adf9567cb_b](E:\lagou\笔记整理\版本控制\img\v2-f518348e215125a7cf1e044adf9567cb_b.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-f518348e215125a7cf1e044adf9567cb_b.png)
 
 Respository name是必填项目，而其余都是选填项，可以默认。
  点击Create respository按钮  ，即创建了一个新的仓库
  这时候可以将项目分享给其他人，通过HTTP和SSH的形式。  
 
-![img/v2-b64a2c230b6caf84981af0d587ece07a_b](https://i.loli.net/2021/05/20/vy49qSW5N8QOPjX.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192124001.png)
 
 
 
@@ -324,13 +318,13 @@ Checking connectivity... done.
 
 
 
-![img/v2-a93bf672a283a3dda24584ff833f799d_b](https://i.loli.net/2021/05/20/j3IYiDwG8thgmC7.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192752177.png)
 
 5.Fork按钮可以将他人项目派生下来，在你的空间中创建一个完全属于你的项目副本。  
 
 
 
-![img/v2-aceaaf541576e6be2edc65ce951928c4_b](https://i.loli.net/2021/05/20/mKhoDRjUB7QSwc9.png)
+![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192804015.png)
 
 
 
