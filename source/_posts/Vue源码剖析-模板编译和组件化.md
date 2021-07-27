@@ -1,5 +1,4 @@
----
-title: Vue源码剖析-模板编译和组件化
+title: Vue.js 源码剖析-模板编译和组件化
 author: 5coder
 tags:
   - Vue模板编译
@@ -10,8 +9,7 @@ date: 2021-07-16 06:38:14
 top:
 cover:
 ---
-
-# Vue源码剖析-模板编译和组件化
+# Vue.js 源码剖析-模板编译和组件化
 
 ## 模板编译
 
@@ -1233,4 +1231,3 @@ function invokeCreateHooks (vnode, insertedVnodeQueue) {
   }
 }
 ```
-
