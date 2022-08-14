@@ -923,8 +923,8 @@
     "xtend" "^4.0.0"
 
 "buffer-crc32@~0.2.3":
-  "integrity" "sha1-DTM+PwDqxQqhRUq9MO+MKl2ackI="
-  "resolved" "https://registry.npm.taobao.org/buffer-crc32/download/buffer-crc32-0.2.13.tgz"
+  "integrity" "sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ=="
+  "resolved" "https://registry.npmmirror.com/buffer-crc32/-/buffer-crc32-0.2.13.tgz"
   "version" "0.2.13"
 
 "buffer-crc32@0.2.1":
@@ -938,9 +938,9 @@
   "version" "0.0.1"
 
 "buffer-from@^1.0.0":
-  "integrity" "sha1-MnE7wCj3XAL9txDXx7zsHyxgcO8="
-  "resolved" "https://registry.nlark.com/buffer-from/download/buffer-from-1.1.1.tgz"
-  "version" "1.1.1"
+  "integrity" "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ=="
+  "resolved" "https://registry.npmmirror.com/buffer-from/-/buffer-from-1.1.2.tgz"
+  "version" "1.1.2"
 
 "buffer-xor@^1.0.3":
   "integrity" "sha512-571s0T7nZWK6vB67HI5dyUF7wXiNcfaPPPTl6zYCNApANjIvYJTg7hlud/+cJpdAhS7dVzqMLmfhfHR3rAcOjQ=="
@@ -1281,8 +1281,8 @@
   "version" "0.0.1"
 
 "concat-stream@^1.6.2":
-  "integrity" "sha1-kEvfGUzTEi/Gdcd/xKw9T/D9GjQ="
-  "resolved" "https://registry.nlark.com/concat-stream/download/concat-stream-1.6.2.tgz"
+  "integrity" "sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw=="
+  "resolved" "https://registry.npmmirror.com/concat-stream/-/concat-stream-1.6.2.tgz"
   "version" "1.6.2"
   dependencies:
     "buffer-from" "^1.0.0"
@@ -1853,8 +1853,8 @@
     "is-arrayish" "^0.2.1"
 
 "es6-promise@^4.0.3":
-  "integrity" "sha1-TrIVlMlyvEBVPSduUQU5FD21Pgo="
-  "resolved" "https://registry.npm.taobao.org/es6-promise/download/es6-promise-4.2.8.tgz"
+  "integrity" "sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w=="
+  "resolved" "https://registry.npmmirror.com/es6-promise/-/es6-promise-4.2.8.tgz"
   "version" "4.2.8"
 
 "escape-html@~1.0.3":
@@ -2018,8 +2018,8 @@
     "to-regex" "^3.0.1"
 
 "extract-zip@^1.6.5":
-  "integrity" "sha1-VWzDrp339FLEk6DPtRzDAneUCSc="
-  "resolved" "https://registry.npm.taobao.org/extract-zip/download/extract-zip-1.7.0.tgz"
+  "integrity" "sha512-xoh5G1W/PB0/27lXgMQyIhP5DSY/LhoCsOyZgb+6iMmRtCwVBo55uKaMoEYrDCKQhWvqEip5ZPKAc6eFNyf/MA=="
+  "resolved" "https://registry.npmmirror.com/extract-zip/-/extract-zip-1.7.0.tgz"
   "version" "1.7.0"
   dependencies:
     "concat-stream" "^1.6.2"
@@ -2048,8 +2048,8 @@
   "version" "2.0.6"
 
 "fd-slicer@~1.1.0":
-  "integrity" "sha1-JcfInLH5B3+IkbvmHY85Dq4lbx4="
-  "resolved" "https://registry.npm.taobao.org/fd-slicer/download/fd-slicer-1.1.0.tgz"
+  "integrity" "sha512-cE1qsB/VwyQozZ+q1dGxR8LBYNZeofhEdUNGSMbQD3Gw2lAzX9Zb3uIU6Ebc/Fmyjo9AWWfnn0AUCHqtevs/8g=="
+  "resolved" "https://registry.npmmirror.com/fd-slicer/-/fd-slicer-1.1.0.tgz"
   "version" "1.1.0"
   dependencies:
     "pend" "~1.2.0"
@@ -2202,8 +2202,8 @@
   "version" "1.0.0"
 
 "fs-extra@^1.0.0":
-  "integrity" "sha1-zTzl9+fLYUWIP8rjGR6Yd/hYeVA="
-  "resolved" "https://registry.nlark.com/fs-extra/download/fs-extra-1.0.0.tgz"
+  "integrity" "sha512-VerQV6vEKuhDWD2HGOybV6v5I73syoc/cXAbKlgTC7M/oFVEtklWlp9QH2Ijw3IaWDOQcMkldSPa7zXy79Z/UQ=="
+  "resolved" "https://registry.npmmirror.com/fs-extra/-/fs-extra-1.0.0.tgz"
   "version" "1.0.0"
   dependencies:
     "graceful-fs" "^4.1.2"
@@ -2519,8 +2519,8 @@
     "minimalistic-assert" "^1.0.1"
 
 "hasha@^2.2.0":
-  "integrity" "sha1-eNfL/B5tZjA/55g3NlmEUXsvbuE="
-  "resolved" "https://registry.npm.taobao.org/hasha/download/hasha-2.2.0.tgz"
+  "integrity" "sha512-jZ38TU/EBiGKrmyTNNZgnvCZHNowiRI4+w/I9noMlekHTZH3KyGgvJLmhSgykeAQ9j2SYPDosM0Bg3wHfzibAQ=="
+  "resolved" "https://registry.npmmirror.com/hasha/-/hasha-2.2.0.tgz"
   "version" "2.2.0"
   dependencies:
     "is-stream" "^1.0.1"
@@ -4423,8 +4423,8 @@
     "sha.js" "^2.4.8"
 
 "pend@~1.2.0":
-  "integrity" "sha1-elfrVQpng/kRUzH89GY9XI4AelA="
-  "resolved" "https://registry.npm.taobao.org/pend/download/pend-1.2.0.tgz"
+  "integrity" "sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg=="
+  "resolved" "https://registry.npmmirror.com/pend/-/pend-1.2.0.tgz"
   "version" "1.2.0"
 
 "performance-now@^0.2.0":
@@ -4437,9 +4437,9 @@
   "resolved" "https://registry.npm.taobao.org/performance-now/download/performance-now-2.1.0.tgz"
   "version" "2.1.0"
 
-"phantomjs-prebuilt@^2.1.14":
-  "integrity" "sha1-79ISpKOWbTZHaE6ouniFSb4q7+8="
-  "resolved" "https://registry.npm.taobao.org/phantomjs-prebuilt/download/phantomjs-prebuilt-2.1.16.tgz"
+"phantomjs-prebuilt@^2.1.14", "phantomjs-prebuilt@^2.1.16":
+  "integrity" "sha512-PIiRzBhW85xco2fuj41FmsyuYHKjKuXWmhjy3A/Y+CMpN/63TV+s9uzfVhsUwFe0G77xWtHBG8xmXf5BqEUEuQ=="
+  "resolved" "https://registry.npmmirror.com/phantomjs-prebuilt/-/phantomjs-prebuilt-2.1.16.tgz"
   "version" "2.1.16"
   dependencies:
     "es6-promise" "^4.0.3"
@@ -6164,8 +6164,8 @@
   "version" "1.0.0"
 
 "which@^1.2.10":
-  "integrity" "sha1-pFBD1U9YBTFtqNYvn1CRjT2nCwo="
-  "resolved" "https://registry.nlark.com/which/download/which-1.3.1.tgz"
+  "integrity" "sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ=="
+  "resolved" "https://registry.npmmirror.com/which/-/which-1.3.1.tgz"
   "version" "1.3.1"
   dependencies:
     "isexe" "^2.0.0"
@@ -6350,8 +6350,8 @@
     "yargs-parser" "^4.2.0"
 
 "yauzl@^2.10.0":
-  "integrity" "sha1-x+sXyT4RLLEIb6bY5R+wZnt5pfk="
-  "resolved" "https://registry.npm.taobao.org/yauzl/download/yauzl-2.10.0.tgz"
+  "integrity" "sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g=="
+  "resolved" "https://registry.npmmirror.com/yauzl/-/yauzl-2.10.0.tgz"
   "version" "2.10.0"
   dependencies:
     "buffer-crc32" "~0.2.3"
