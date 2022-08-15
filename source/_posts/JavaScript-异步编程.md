@@ -36,6 +36,8 @@ console.log('Global end')
 // Global end
 ```
 
+![20220815_220006](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/202208152208328.gif)
+
 分析：
 
 > - 首先分析代码结构，本段代码为同步模式，js在读取到代码时，先将一个（anonymous）匿名函数放到调用栈。
@@ -75,6 +77,8 @@ console.log('global end')
 // timer1 invoke
 // inner invoke
 ```
+
+![20220815_220254](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/202208152208762.gif)
 
 分析：
 
