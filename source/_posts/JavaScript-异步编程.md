@@ -36,7 +36,9 @@ console.log('Global end')
 // Global end
 ```
 
-![20220815_220006](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/202208152208328.gif)
+复制地址到浏览器地址栏查看动图演示：
+
+https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/202208152208328.gif
 
 分析：
 
@@ -78,7 +80,9 @@ console.log('global end')
 // inner invoke
 ```
 
-![20220815_220254](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/202208152208762.gif)
+复制地址到浏览器地址栏查看动图演示：
+
+https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/202208152208762.gif
 
 分析：
 
