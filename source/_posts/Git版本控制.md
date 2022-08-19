@@ -12,7 +12,7 @@ category: Git
 
 **为什么要进行版本控制？**  最简单的例子，当我们用文字处理软件工作时（如Word）时需要进行修改，而有时候又不确定修改的内容是不是需要的，因此会产生许多个文件，如图：  
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617191834286.png)
+![](http://5coder.cn/img/image-20210617191834286.png)
 
 每一个文件都是在之前的文件基础上进行微小的修改，久而久之，不但文件冗杂，而且还不清楚修改的内容是什么，是一种很杂乱的方式。
 
@@ -34,7 +34,7 @@ git设计简单，是完全分布式，允许成千上万个并行开发的分�
 
 git的三个工作区域，对应着三种状态：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617191854594.png)
+![](http://5coder.cn/img/image-20210617191854594.png)
 
 
  git 工作流程如下：    
@@ -162,21 +162,21 @@ $ git reset --hard 1c83e2a0
 在版本回退里，你可以回溯到之前的任意版本，而这些版本都是处于一条时间线上，这条时间线就是一个分支。
  默认的分支为master分支，本身可以看做一个指针，HEAD指针则指向master指针，如图：    
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617191928000.png)
+![](http://5coder.cn/img/image-20210617191928000.png)
 
 每次提交都会多出一个节点，指针也随之移动。
  当我们创建新的分支时，也就创建了一个新的指针，我们通过命令将HEAD指针移到新指针上：  
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192002448.png)
+![](http://5coder.cn/img/image-20210617192002448.png)
 
 
 
 新提交一次后，新指针向前移动，master指针不变，这就产生了分支：
  我们可以将两条分支合并，之后可以删掉新分支。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192018984.png)
+![](http://5coder.cn/img/image-20210617192018984.png)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192039725.png)
+![](http://5coder.cn/img/image-20210617192039725.png)
 
 这样就完成了分支的合并。
 
@@ -272,15 +272,15 @@ SSH访问配置成功
 1.点击页面右上角的＋号，点击New repository按钮
 
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-3cf6e399f56ab213b6626c3420fee410_b.png)
+![](http://5coder.cn/img/v2-3cf6e399f56ab213b6626c3420fee410_b.png)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-f518348e215125a7cf1e044adf9567cb_b.png)
+![](http://5coder.cn/img/v2-f518348e215125a7cf1e044adf9567cb_b.png)
 
 Respository name是必填项目，而其余都是选填项，可以默认。
  点击Create respository按钮  ，即创建了一个新的仓库
  这时候可以将项目分享给其他人，通过HTTP和SSH的形式。  
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192124001.png)
+![](http://5coder.cn/img/image-20210617192124001.png)
 
 
 
@@ -318,13 +318,13 @@ Checking connectivity... done.
 
 
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192752177.png)
+![](http://5coder.cn/img/image-20210617192752177.png)
 
 5.Fork按钮可以将他人项目派生下来，在你的空间中创建一个完全属于你的项目副本。  
 
 
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210617192804015.png)
+![](http://5coder.cn/img/image-20210617192804015.png)
 
 
 

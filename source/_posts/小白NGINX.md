@@ -12,7 +12,7 @@ category: Linux
 
 Emmm，上面的 Nginx 介绍看过去有些复杂而且充满了不明觉厉的术语。Relax，在这篇文章里，我（原作者）会先带你理解 Nginx 的架构和专有术语，最后实践一把安装和配置 **Nginx**。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/q7r9OEdkxBVuwln.jpg)
+![](http://5coder.cn/img/q7r9OEdkxBVuwln.jpg)
 
 简单来说，你只要记住一点：*Nginx 是个神奇的 Web 服务器*。（注：神奇之处下文会娓娓道来）
 
@@ -26,7 +26,7 @@ Nginx 的基本特性是代理，所以你一定要明白什么是**代理**和*
 
 看个小例子，现在我们有 N 个客户端（N >= 1），一个中间 Web 服务器（在本例中，我们称之为代理）和一个服务器。这个例子主要的场景是，服务器不知道哪个客户端在请求（响应）。是不是有点难以理解？下面让我用示意图讲解下：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/dHWV6JLXwz4rgmI.jpg)
+![](http://5coder.cn/img/dHWV6JLXwz4rgmI.jpg)
 
 如图，*client1* 和 *client2* 通过代理服务器向服务器发送请求 *request1* 和 *request2*，此时后端服务器不知道 *request1* 是由 *client1* 发送的还是 *client2* 发送的，但会执行（响应）操作。
 
@@ -34,7 +34,7 @@ Nginx 的基本特性是代理，所以你一定要明白什么是**代理**和*
 
 简单来说，反向代理与代理的功能相反。现在我们有一个客户端、一个中间 Web 服务器和 N 个后端服务器（N >= 1），同样的来看下示意图：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-2d5a169d1b6781b636e6fa27d7402399_b.jpg)
+![](http://5coder.cn/img/v2-2d5a169d1b6781b636e6fa27d7402399_b.jpg)
 
 如图，客户端将通过 Web 服务器发送请求。而 Web 服务器会通过一个算法，当中最有意思的算法是轮询，直接将请求指向许多后端服务器中的一个，并通过 Web 服务器将响应返回给客户端。因此，在上面的例子中，客户端其实并不知道在与哪个后端服务器进行交互。
 
@@ -52,7 +52,7 @@ Okay，在我们开始实践 Nginx 之前，先搞清所有的基本知识！
 
 有状态应用存了一个额外变量，只用来保存服务器中单个实例使用所需的信息。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/8QLK1FxkDNntWyB.jpg)
+![](http://5coder.cn/img/8QLK1FxkDNntWyB.jpg)
 
 如图所示，一个后端服务器 *server1* 存储了一些信息，服务器 *server2* 并不存储此信息，因此，客户端 (上图 Bob) 的交互可能会也可能不会得到想要的结果，因为它可能会与 *server1* 或 *server2* 交互。在本例中，*server1* 允许 Bob 查看数据文件，但 *server2* 不允许。因此，虽然有状态应用避免对数据库的多次 API 调用，并且（响应）速度更快，但它可能会在不同的服务器上导致这个（无法得到想要结果）问题。
 
@@ -60,7 +60,7 @@ Okay，在我们开始实践 Nginx 之前，先搞清所有的基本知识！
 
 无状态应用有更多的数据库 API 调用，但当客户端与不同后端服务器的交互时，无状态应用却存在更少的问题。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/XQiwhWptVSuzdvU.jpg)
+![](http://5coder.cn/img/XQiwhWptVSuzdvU.jpg)
 
 没明白？简单来说，如果我通过 Web 服务器从客户端向后端服务器 *server1* 发送请求，它将向客户端返回一个令牌，用于任何进一步的访问请求。客户端可以使用令牌并向 Web 服务器发送请求。此 Web 服务器将请求连同令牌一起发送到任意后端服务器，而每个后端服务器都能提供相同的所需结果。
 
@@ -68,7 +68,7 @@ Okay，在我们开始实践 Nginx 之前，先搞清所有的基本知识！
 
 Nginx 是网络服务器，到目前为止，我的整个博客一直在用这个网络服务器。老实说，Nginx 这就像个**中间人**。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-0502aeb476680bcae43090ec92467803_b.jpg)
+![](http://5coder.cn/img/v2-0502aeb476680bcae43090ec92467803_b.jpg)
 
 这个图不难理解，它是目前为止所有概念的一个组合。在这里，我们有 3 个后端服务器运行在 3001、3002 和 3003 端口，这些后端服务器都能访问同一个运行在 5432 端口的数据库。
 
@@ -82,7 +82,7 @@ Nginx 是网络服务器，到目前为止，我的整个博客一直在用这�
 
 时机到了，如果你了解了上面的概念，可以动手开始 Nginx 实践了。
 
-![img](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-dce888494829e097fdbe8e3695bb056a_b.jpg)
+![img](http://5coder.cn/img/v2-dce888494829e097fdbe8e3695bb056a_b.jpg)
 
 嗯，Nginx 的安装过程对任何系统来说都很简单。我是一个 Mac OSX 用户，所以例子的命令是基于 macOS 的， **[Ubuntu](https://link.zhihu.com/?target=https%3A//ubuntu.com/tutorials/install-and-configure-nginx%232-installing-nginx)**、**[Windows](https://link.zhihu.com/?target=https%3A//www.maketecheasier.com/install-nginx-server-windows/)** 和其他 Linux 发行版操作和例子类似。
 
@@ -104,7 +104,7 @@ $ sudo nginx
 
 执行上面指令，再打开浏览器并输入 `http://localhost:8080/` 回车查看下，你会看到以下画面！
 
-![img](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/v2-5e6766e81f555711aabf7a1cd1554fba_b.jpg)
+![img](http://5coder.cn/img/v2-5e6766e81f555711aabf7a1cd1554fba_b.jpg)
 
 ## **Nginx 基本配置 & 示例** 
 

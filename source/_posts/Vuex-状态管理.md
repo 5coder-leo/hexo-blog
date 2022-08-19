@@ -59,13 +59,13 @@ new Vue({
 - **view**，以声明方式将state映射到视图
 - **actions**，响应在view上的用户输入导致的状态变化
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210719213045881.png)
+![](http://5coder.cn/img/image-20210719213045881.png)
 
 ## 组件间通信方式回顾
 
 大多数场景下的组件都并不是独立存在的，而是相互协作共同构成了一个复杂的业务功能。在 Vue 中为不同的组件关系提供了不同的通信规则。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210719213508962.png)
+![](http://5coder.cn/img/image-20210719213508962.png)
 
 ### [父传子：Props Down](https://cn.vuejs.org/v2/guide/components.html#%E9%80%9A%E8%BF%87-Prop-%E5%90%91%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE)
 
@@ -119,15 +119,15 @@ new Vue({
 
 
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210719213708568.png)
+![](http://5coder.cn/img/image-20210719213708568.png)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210719213815350.png)
+![](http://5coder.cn/img/image-20210719213815350.png)
 
 ### [子传父：Event Up](https://cn.vuejs.org/v2/guide/components.html#%E7%9B%91%E5%90%AC%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BA%8B%E4%BB%B6)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210720054418797.png)
+![](http://5coder.cn/img/image-20210720054418797.png)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210720054522110.png)
+![](http://5coder.cn/img/image-20210720054522110.png)
 
 ### [非父子组件：Event Bus](https://cn.vuejs.org/v2/guide/migration.html#dispatch-%E5%92%8C-broadcast-%E6%9B%BF%E6%8D%A2)
 
@@ -308,7 +308,7 @@ export default {
 
 ### 核心概念回顾
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/vuex.png)
+![](http://5coder.cn/img/vuex.png)
 
 - `Store`:仓库，`store`是使用`Vuex`应用程序的核心，每一个应用仅有一个`store`。`store`是一个容器，包含应用中的大部分状态，当然我们不能直接改变`store`中的应用状态，我们需要通过提交`mutation`的方式改变状态。
 - `State`：就是状态，保存在store中。因为`store`是唯一的，所以`state`状态也是惟一的，称为单一状态树。但是所有的状态都保存在`state`中的话，会让程序难以维护，可以通过后续的模块解决该问题。
@@ -529,7 +529,7 @@ export default new Vuex.Store({
 
 ```
 
-![vuex](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/vuex.gif)
+![vuex](http://5coder.cn/img/vuex.gif)
 
 #### [Action](https://vuex.vuejs.org/zh/guide/actions.html#action)
 
@@ -609,9 +609,9 @@ export default new Vuex.Store({
 
 目录结构：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210720231254540.png)
+![](http://5coder.cn/img/image-20210720231254540.png)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210720231711492.png)
+![](http://5coder.cn/img/image-20210720231711492.png)
 
 #### 严格模式
 
@@ -619,22 +619,22 @@ export default new Vuex.Store({
 
 `store/index.js`中添加`strict: true`
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721055156446.png)
+![](http://5coder.cn/img/image-20210721055156446.png)
 
 在`App.vue`中添加如下代码，点击按钮直接修改`store`中`state.msg`的值
 
-![image-20210721055240615](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721055240615.png)
+![image-20210721055240615](http://5coder.cn/img/image-20210721055240615.png)
 
 打开浏览器进行测试，发现$store.state.msg的值确实被修改了，但是console中会抛出异常。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721055417299.png)
+![](http://5coder.cn/img/image-20210721055417299.png)
 
 需要注意的是：不要再生产模式下开启严格模式，严格模式会深度检查状态树，来检查不合规的状态改变，会影响性能。可以再开发环境中启用严格模式，在生产模式下关闭严格模式。调整后的代码：
 
 - 当`npm run serve`时，`process.env.NODE_ENV`为`development`开发环境；
 - 当`npm run build`时，`process.env.NODE_ENV`是`production`。这样就可以根据环境来动态的设置严格模式。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721055707152.png)
+![](http://5coder.cn/img/image-20210721055707152.png)
 
 ## 购物车案例
 
@@ -644,7 +644,7 @@ export default new Vuex.Store({
 
 案例演示
 
-![cart](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/cart.gif)
+![cart](http://5coder.cn/img/cart.gif)
 
 server.js，在访问数据时，必须先使用`node server.js`启动server接口
 
@@ -1259,16 +1259,16 @@ computed: {
 - 这个函数内可以注册一个函数，让它可以在`mutaions`之后再执行
 - 就像在`axios`中的过滤器，在所有请求之后统一完成一件事
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721221103084.png)
+![](http://5coder.cn/img/image-20210721221103084.png)
 
 - `mutation`的结构
   - 如果想在`cart`模块中的`mutation`之行结束之后再来调用调用，`product`模块中不需要，可以使用`mutation`
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721221642267.png)
+![](http://5coder.cn/img/image-20210721221642267.png)
 
 - 注册插件
 
-![image-20210721221144978](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210721221144978.png)
+![image-20210721221144978](http://5coder.cn/img/image-20210721221144978.png)
 
 - 最终实现
 

@@ -108,7 +108,7 @@ vue
 
   - 结果
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210621215220709.png)
+    ![](http://5coder.cn/img/image-20210621215220709.png)
 
 ##### 调试
 
@@ -116,7 +116,7 @@ vue
 
 - 打开Chrome的调试工具中的source
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210621215534350.png)
+  ![](http://5coder.cn/img/image-20210621215534350.png)
 
 <iframe src="http://5coder.cn/static/video/20210621_215739.mp4" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" height=500 width=700 autoplay="false"> </iframe>
 
@@ -177,11 +177,11 @@ vue
 </html>
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210621232639624.png)
+![](http://5coder.cn/img/image-20210621232639624.png)
 
 将vue版本改为`vue.runtime.js`，发现浏览器报错，提示更改为render函数或者用compiler-included build。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210621232855357.png)
+![](http://5coder.cn/img/image-20210621232855357.png)
 
 更改template如下：
 
@@ -218,7 +218,7 @@ vue
 
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210621233125601.png)
+![](http://5coder.cn/img/image-20210621233125601.png)
 
 #### 使用vue-cli创建项目时查看vue构件版本
 
@@ -229,7 +229,7 @@ vue inspect  # 直接输出到控制台
 vue inspect > output.js  # 将执行vue inspect命令后的结果输出到output.js文件中
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210622055014013.png)
+![](http://5coder.cn/img/image-20210622055014013.png)
 
 > output.js不是一个有效的`webpack`配置文件，不能拿来直接使用。
 
@@ -242,7 +242,7 @@ vue inspect > output.js  # 将执行vue inspect命令后的结果输出到output
 > - **runtime-only**
 >   - `render -> vdom -> UI`
 >
-> ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210622060735123.png)
+> ![](http://5coder.cn/img/image-20210622060735123.png)
 >
 > 以上内容来自[**coderwhy**哔哩哔哩动画第96节视频](https://www.bilibili.com/video/BV15741177Eh?p=96)
 
@@ -343,7 +343,7 @@ const vm = new Vue({    el: '#app',    template: '<h3>Hello Template</h3>',    r
   const vm = new Vue({    el: '#app',    template: '<h3>Hello template</h3>',    render (h) {    	return h('h4', 'Hello render')    }})
   ```
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210622223137140.png)
+  ![](http://5coder.cn/img/image-20210622223137140.png)
 
 #### Vue的构造函数在哪里
 
@@ -400,7 +400,7 @@ const vm = new Vue({    el: '#app',    template: '<h3>Hello Template</h3>',    r
   - 定义了Vue构造函数，调用了`this._init(options)`方法
   - 给Vue中混入了常用的实例成员
 
-![Snipaste_2021-06-23_06-11-34](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Snipaste_2021-06-23_06-11-34.png)
+![Snipaste_2021-06-23_06-11-34](http://5coder.cn/img/Snipaste_2021-06-23_06-11-34.png)
 
 ## Vue的初始化
 
@@ -638,7 +638,7 @@ export function initAssetRegisters (Vue: GlobalAPI) {
 
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210628055348086.png)
+![](http://5coder.cn/img/image-20210628055348086.png)
 
 ### src/core/instance/index.js
 
@@ -840,19 +840,19 @@ export default Vue
 
 - stateMixin(Vue)
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210628060200588.png)
+  ![](http://5coder.cn/img/image-20210628060200588.png)
 
 - eventsMixin(Vue)
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210628060108441.png)
+  ![](http://5coder.cn/img/image-20210628060108441.png)
 
 - lifecycleMixin(Vue)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210628060417525.png)
+![](http://5coder.cn/img/image-20210628060417525.png)
 
 - renderMixin(Vue)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210628060433991.png)
+![](http://5coder.cn/img/image-20210628060433991.png)
 
 ## 首次渲染过程
 
@@ -860,7 +860,7 @@ export default Vue
 - 调用new Vue()之前，已经初始化完毕
 - 通过调试代码，记录首次渲染过程
 
-![首次渲染过程](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/首次渲染过程.png)
+![首次渲染过程](http://5coder.cn/img/首次渲染过程.png)
 
 ## 数据响应式原理
 
@@ -1454,7 +1454,7 @@ export function popTarget () {
 
 ### 数据响应式原理总结
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/响应式处理过程.png)
+![](http://5coder.cn/img/响应式处理过程.png)
 
 ### 动态添加一个响应式属性
 
@@ -1495,31 +1495,31 @@ export function popTarget () {
 </html>
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210706052116706.png)
+![](http://5coder.cn/img/image-20210706052116706.png)
 
 打开浏览器开发者模式，分别键入如下内容：
 
 - `vm.obj.name = 'abc'`
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210706052150370.png)
+  ![](http://5coder.cn/img/image-20210706052150370.png)
 
   **可以发现，动态给`obj`增加`name`属性，视图并未更新，说明此时`name`属性不是响应式的**
 
 - `vm.$set(vm.obj, 'name', 'zhangsan')`
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210706052431324.png)
+  ![](http://5coder.cn/img/image-20210706052431324.png)
 
   可以使用`vm.$set(vm.obj, 'name', 'zhangsan')`来给响应式对象动态添加响应式属性(或者使用Vue.set())。
 
   使用vm.$set()方法改变数组的第一个元素的值：`vm.$set(vm.arr, 0, 100)`。vm.$set()[官方文档](https://cn.vuejs.org/v2/api/#vm-set)
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210706053012528.png)
+  ![](http://5coder.cn/img/image-20210706053012528.png)
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210706053024997.png)
+  ![](http://5coder.cn/img/image-20210706053024997.png)
 
   不能给Vue实例或者Vue实例的跟数组对象动态的添加响应式属性。
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210706053237085.png)
+  ![](http://5coder.cn/img/image-20210706053237085.png)
 
 ## 实例方法/数据
 
@@ -1941,19 +1941,19 @@ Vue.prototype.$watch = function (
 
   - 计算属性watcher
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707055015275.png)
+    ![](http://5coder.cn/img/image-20210707055015275.png)
 
   - 用户watcher（侦听器）
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707055122029.png)
+    ![](http://5coder.cn/img/image-20210707055122029.png)
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707055217763.png)
+    ![](http://5coder.cn/img/image-20210707055217763.png)
 
   - 渲染watcher
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707055333356.png)
+    ![](http://5coder.cn/img/image-20210707055333356.png)
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707055459252.png)
+    ![](http://5coder.cn/img/image-20210707055459252.png)
     - 查看渲染`watcher`的执行过程
       - 当数据更新，`defineReactive`的`set`方法中调用`dep.notify()`
       - 调用`watcher`的`update()`
@@ -2033,11 +2033,11 @@ Vue.prototype.$nextTick = function (fn: Function) {
 
 - $nextTick()实例方法
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707063325418.png)
+  ![](http://5coder.cn/img/image-20210707063325418.png)
 
 - $nextTick()静态方法
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210707063356290.png)
+  ![](http://5coder.cn/img/image-20210707063356290.png)
 
 ```js
 export function nextTick (cb?: Function, ctx?: Object) {

@@ -62,7 +62,7 @@ export default {
 
 当前目录结构：
 
-![1627261549024](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627261549024.png)
+![1627261549024](http://5coder.cn/img/1627261549024.png)
 
 `app.html`：
 
@@ -280,7 +280,7 @@ export default {
 
 当前效果：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627262711486.png)
+![](http://5coder.cn/img/1627262711486.png)
 
 访问localhost:3000时，首先加载pages/index.vue组件，在nuxt-child中加载子路由，子路由path为空字符串‘’，因此访问localhost:3000时会同时加载`pages/index.vue`、`pages/layout/index.vue`、`pages/home/index.vue`三个组件
 
@@ -717,7 +717,7 @@ export default {
 </style>
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627269694843.png)
+![](http://5coder.cn/img/1627269694843.png)
 
 ## 处理导航链接高亮
 
@@ -796,7 +796,7 @@ export default {
   
   当前目录结构：
   
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627270097786.png)
+  ![](http://5coder.cn/img/1627270097786.png)
 
 ## 封装请求模块
 
@@ -821,7 +821,7 @@ export default {
 
 - 登录接口
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627279394859.png)
+  ![](http://5coder.cn/img/1627279394859.png)
 
 `pages/login/index.vue`
 
@@ -991,11 +991,11 @@ export default {
 
 - 未处理时，登录请求错误会出现如下页面：
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627282436215.png)
+  ![](http://5coder.cn/img/1627282436215.png)
 
 - 错误信息如下：
 
-  - ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627282574328.png)
+  - ![](http://5coder.cn/img/1627282574328.png)
 
 - 使用`try {} catch {err}`捕获异常
 
@@ -1031,7 +1031,7 @@ export default {
 
 - 处理完错误后页面如下：
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1627282636518.png)
+  ![](http://5coder.cn/img/1627282636518.png)
 
 ### 用户注册
 
@@ -1266,7 +1266,7 @@ export default {
 >
 > 您可以通过在 middleware/ 目录中创建一个文件来创建命名中间件，文件名将是中间件名称。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210726221657192.png)
+![](http://5coder.cn/img/image-20210726221657192.png)
 
 `middleware/authenticated.js`
 
@@ -1483,9 +1483,9 @@ export default {
 
 - 相应query参数变化
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210726230706868.png)
+![](http://5coder.cn/img/image-20210726230706868.png)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210726230718855.png)
+![](http://5coder.cn/img/image-20210726230718855.png)
 
 ```js
 watchQuery: ['page'],
@@ -2076,7 +2076,7 @@ methods: {
 
 ### 把Markdown转为HTMl
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210727221929254.png)
+![](http://5coder.cn/img/image-20210727221929254.png)
 
 使用第三方插件[markdown-it](https://markdown-it.docschina.org/)，该插件可以将`markdown`语法转换为`HTML`。在获取到`article.body`后，使用该插件方法将其转为`HTML`。
 
@@ -2106,9 +2106,9 @@ export default {
 
 ### 展示文章作者相关信息
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210727222805705.png)
+![](http://5coder.cn/img/image-20210727222805705.png)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210727222834093.png)
+![](http://5coder.cn/img/image-20210727222834093.png)
 
 文章详情页面中有两部分功能相似：
 
@@ -2246,9 +2246,9 @@ TODO 关注按钮事件，其原理与点赞按钮相同，封装API请求，点
 
 - 修改页面标题，希望在页面标题中出现文章的标题
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210727225038839.png)
+  ![](http://5coder.cn/img/image-20210727225038839.png)
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210727225100076.png)
+  ![](http://5coder.cn/img/image-20210727225100076.png)
 
 [特定页面的Meta标签用法](https://www.nuxtjs.cn/api/pages-head)
 
@@ -2337,7 +2337,7 @@ export default {
 
 显示效果
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210727225840268.png)
+![](http://5coder.cn/img/image-20210727225840268.png)
 
 ### 文章评论
 

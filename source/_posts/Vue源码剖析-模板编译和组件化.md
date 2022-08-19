@@ -110,13 +110,13 @@ render(h) {
 
 - _c是createElement()方法，定义的位置instance/render.js中
 
-  - ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Snipaste_2021-07-13_14-46-59.png)
+  - ![](http://5coder.cn/img/Snipaste_2021-07-13_14-46-59.png)
 
 - 相关的渲染函数(_开头的方法定义)，在instance/render-helps/index.js
 
 - installRenderHelpers(target:any)
 
-  - ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Snipaste_2021-07-13_14-49-43.png)
+  - ![](http://5coder.cn/img/Snipaste_2021-07-13_14-49-43.png)
 
   ```js
   export function installRenderHelpers (target: any) {
@@ -273,10 +273,10 @@ render(h) {
 
 - [vue-template-explorer](https://template-explorer.vuejs.org/#%3Cdiv%20id%3D%22app%22%3E%0A%20%20%3Cselect%3E%0A%20%20%20%20%3Coption%3E%0A%20%20%20%20%20%20%7B%7B%20msg%20%20%7D%7D%0A%20%20%20%20%3C%2Foption%3E%0A%20%20%3C%2Fselect%3E%0A%20%20%3Cdiv%3E%0A%20%20%20%20hello%0A%20%20%3C%2Fdiv%3E%0A%3C%2Fdiv%3E)
   - Vue2.6把模板编译成render函数的工具
-  - ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Snipaste_2021-07-14_16-04-40.png)
+  - ![](http://5coder.cn/img/Snipaste_2021-07-14_16-04-40.png)
 - [vue-next-template-explorer](https://vue-next-template-explorer.netlify.app/#%7B%22src%22%3A%22%3Cdiv%20id%3D%5C%22app%5C%22%3E%5Cn%20%20%3Cselect%3E%5Cn%20%20%20%20%3Coption%3E%5Cn%20%20%20%20%20%20%7B%7B%20msg%20%20%7D%7D%5Cn%20%20%20%20%3C%2Foption%3E%5Cn%20%20%3C%2Fselect%3E%5Cn%20%20%3Cdiv%3E%5Cn%20%20%20%20hello%5Cn%20%20%3C%2Fdiv%3E%5Cn%3C%2Fdiv%3E%22%2C%22options%22%3A%7B%22mode%22%3A%22module%22%2C%22filename%22%3A%22Foo.vue%22%2C%22prefixIdentifiers%22%3Afalse%2C%22hoistStatic%22%3Afalse%2C%22cacheHandlers%22%3Afalse%2C%22scopeId%22%3Anull%2C%22inline%22%3Afalse%2C%22ssrCssVars%22%3A%22%7B%20color%20%7D%22%2C%22compatConfig%22%3A%7B%22MODE%22%3A3%7D%2C%22whitespace%22%3A%22condense%22%2C%22bindingMetadata%22%3A%7B%22TestComponent%22%3A%22setup-const%22%2C%22setupRef%22%3A%22setup-ref%22%2C%22setupConst%22%3A%22setup-const%22%2C%22setupLet%22%3A%22setup-let%22%2C%22setupMaybeRef%22%3A%22setup-maybe-ref%22%2C%22setupProp%22%3A%22props%22%2C%22vMySetupDir%22%3A%22setup-const%22%7D%2C%22optimizeBindings%22%3Afalse%7D%7D)
   - Vue3.0beta把模板编译成render函数的工具
-  - ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Snipaste_2021-07-14_16-05-02.png)
+  - ![](http://5coder.cn/img/Snipaste_2021-07-14_16-05-02.png)
 
 通过观察编译生成的`render`函数，可以发现在Vue2的模板的时候，标签内的文本内容**尽量不要添加空白的文本内容（空格、换行等）**。而Vue3则没有要求，**Vue3编译后的render函数已经去除了标签内多余的空白**。
 
@@ -305,7 +305,7 @@ render(h) {
   )
   ```
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Snipaste_2021-07-13_14-37-04.png)
+  ![](http://5coder.cn/img/Snipaste_2021-07-13_14-37-04.png)
 
 - 调试`compileToFunctions()`执行过程，生成渲染函数的过程
 
@@ -356,7 +356,7 @@ render(h) {
               - compileToFunctions()通过`createCompileToFunctionFn()`函数返回
               - **`createCompileToFunctionFn()`函数就是模板编译的入口函数**
 
-![模板编译入口](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/模板编译入口.png)
+![模板编译入口](http://5coder.cn/img/模板编译入口.png)
 
 #### compileToFunctions
 
@@ -628,7 +628,7 @@ export const createCompiler = createCompilerCreator(function baseCompile (
 
 [astexplorer](https://astexplorer.net/#/gist/30f2bd28c9bbe0d37c2408e87cabdfcc/1cd0d49beed22d3fc8e2ade0177bb22bbe4b907c)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210717140315567.png)
+![](http://5coder.cn/img/image-20210717140315567.png)
 
 - 结构化指令的处理
 
@@ -690,11 +690,11 @@ export const createCompiler = createCompilerCreator(function baseCompile (
     > })
     > ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210717144639230.png)
+![](http://5coder.cn/img/image-20210717144639230.png)
 
 parseHTML
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210717145525408.png)
+![](http://5coder.cn/img/image-20210717145525408.png)
 
 #### parse整体过程
 
@@ -713,7 +713,7 @@ parseHTML
   - 提升为敞亮，重新渲染的时候不再重新创建节点
   - 在patch的时候跳过静态子树
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210717145729478.png)
+![](http://5coder.cn/img/image-20210717145729478.png)
 
 ```js
 /**
@@ -740,11 +740,11 @@ export function optimize (root: ?ASTElement, options: CompilerOptions) {
 }
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210717150507115.png)
+![](http://5coder.cn/img/image-20210717150507115.png)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210717150528294.png)
+![](http://5coder.cn/img/image-20210717150528294.png)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210717150556724.png)
+![](http://5coder.cn/img/image-20210717150556724.png)
 
 > optimize中只是去标记AST对象及其子对象的静态节点和静态根节点。静态根节点指的是：标签中包含**子标签**并且**没有动态内容**，也即是里面为纯文本内容。如果标签中**只包含纯文本内容**没有子标签，Vue中是不会对它做优化的，因为优化的成本大于收益。
 
@@ -786,11 +786,11 @@ export function optimize (root: ?ASTElement, options: CompilerOptions) {
   }
   ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210718000035248.png)
+![](http://5coder.cn/img/image-20210718000035248.png)
 
 ### 模板编译完整过程
 
-![模板编译过程](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/模板编译过程.png)
+![模板编译过程](http://5coder.cn/img/模板编译过程.png)
 
 > 通过观察模板编译的源代码，我们可以了解到：
 >
@@ -1032,11 +1032,11 @@ function initComputed (Comp) {
 - vm._render() -> createElement()
 - vm._update()
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210718170139407.png)
+![](http://5coder.cn/img/image-20210718170139407.png)
 
 #### 组件VNode的创建过程
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210718170457685.png)
+![](http://5coder.cn/img/image-20210718170457685.png)
 
 - 创建根组件，首次_render()时，会得到整棵树的VNode结构
 - 整体流程：`new Vue() --> $mount() --> vm._render() --> createElement() --> createComponent()`

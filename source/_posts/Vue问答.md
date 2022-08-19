@@ -324,7 +324,7 @@ return vnode
 
 > **3、参考 Snabbdom 提供的电影列表的示例，利用Snabbdom 实现类似的效果，如图：**
 >
-> ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Ciqc1F7zUZ-AWP5NAAN0Z_t_hDY449.png)
+> ![](http://5coder.cn/img/Ciqc1F7zUZ-AWP5NAAN0Z_t_hDY449.png)
 
 代码实现地址：https://gitee.com/coder5leo/fed-e-task-03-01/tree/master/codes/snabbdom-movie
 

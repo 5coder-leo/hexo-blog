@@ -19,7 +19,7 @@ cover:
 >
 > 接下来学习Vue响应式的原理，其中会模拟实现一个最简单的Vue。下面先来看一段代码，这段代码是Vue最基础的结构，我们要做的事情就是自己实现一个实现相同的效果。模拟的原因是我们都知道在面试的时候，Vue响应式原理是一个必问的问题，通过模拟显示Vue响应式的原理，可以更好的回答这些问题。另外在模拟显示原理的过程中，就是借鉴Vue的源码模拟一个最小版本的Vue，这个过程中可以学习别人优秀的经验，并且把它转化成自己的经验，在实际项目中遇到问题也可以通过原理层面来解决。
 >
-> ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/gkYTl1K65hJvWoQ.png)
+> ![](http://5coder.cn/img/gkYTl1K65hJvWoQ.png)
 >
 > 课程目标：
 >
@@ -299,7 +299,7 @@ em.$on('click', () => {
 em.$emit('click')
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Hv9K5PRl6NQO2mI.png)
+![](http://5coder.cn/img/Hv9K5PRl6NQO2mI.png)
 
 #### 观察者模式
 
@@ -348,7 +348,7 @@ dep.addSub(watcher)
 dep.notify()
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/3hWS41TbeR6Oz5x.png)
+![](http://5coder.cn/img/3hWS41TbeR6Oz5x.png)
 
 #### 总结
 
@@ -361,7 +361,7 @@ dep.notify()
 >
 > 发布/订阅模式：发布者-老师，订阅者-家长，事件中心-班级。每当考试完毕，老师会推送每个学生成绩至对应家长，有兴趣的家长自己调用老师的发布技能，获取学生成绩。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/UqTQB6cAK2GC3Ro.png)
+![](http://5coder.cn/img/UqTQB6cAK2GC3Ro.png)
 
 ## 2.响应式原理模拟
 
@@ -369,17 +369,17 @@ dep.notify()
 
 Vue基本结构
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/WEDe4Jft6cV89zZ.png)
+![](http://5coder.cn/img/WEDe4Jft6cV89zZ.png)
 
 打开浏览器，打印Vue实例vm。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/SwtJ2sjnTY3dNz4.png)
+![](http://5coder.cn/img/SwtJ2sjnTY3dNz4.png)
 
 最小版本的Vue中要模拟vm中的$data、$el、$options，还要把data中的成员注入到Vue实例中。
 
 最小版本Vue由下面的类型组成。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/3KCXRfpqz7H1OTv.png)
+![](http://5coder.cn/img/3KCXRfpqz7H1OTv.png)
 
 - Vue
   - 把data中的成员注入到Vue实例，并且把data中的成员转成getter/setter，Vue内部会调用Observer和Compiler
@@ -405,13 +405,13 @@ Vue基本结构
 
 - 结构
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/NYb5DAh92ZdHQWq.png)
+  ![](http://5coder.cn/img/NYb5DAh92ZdHQWq.png)
 
 - 实现代码
 
   miniVue结构
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/hjcJ1WilUo5Ran6.png)
+  ![](http://5coder.cn/img/hjcJ1WilUo5Ran6.png)
 
   `index.html`
 
@@ -494,7 +494,7 @@ Vue基本结构
   
   测试，打开index.html，打开控制台，打印vm实例，如下图，预期的$el、$data、$options都已经注入到vue实例中了。
   
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/wdUEylYAkFm4jiD.png)
+  ![](http://5coder.cn/img/wdUEylYAkFm4jiD.png)
   
   
 
@@ -510,7 +510,7 @@ Vue基本结构
 
 结构
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/7yM3LboGNw9SnWp.png)
+![](http://5coder.cn/img/7yM3LboGNw9SnWp.png)
 
 `walk`方法的作用是遍历`data`中的所有属性，所以它的参数是data对象。defineReactive（定义响应式数据），通过调用`Object.definePropoty()`把属性转换成getter和setter，`walk`方法在循环过程会调用`defineReactive()`方法。
 
@@ -561,7 +561,7 @@ class Observer {
 
 因为在Vue.js中第三步中需要创建Observer对象，所以添加以下代码：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/MUfGaRr5QluWYnC.png)
+![](http://5coder.cn/img/MUfGaRr5QluWYnC.png)
 
 因为在index.html中引入的vue.js需要依赖observer.js，所以先引入observer.js，打开浏览器，打开控制台，打印vm对象。Observer对象核心的功能是把data中的属性转换成getter和setter，如下图实现：
 
@@ -570,25 +570,25 @@ class Observer {
 <script src="./js/vue.js"></script>
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/EBcl4FXakydrMue.png)
+![](http://5coder.cn/img/EBcl4FXakydrMue.png)
 
 #### Observer-defineReactive 1
 
 接下来解释一下为什么defineReactive需要传递第三个参数val，为了演示问题，需要触发get方法。所以在index.html中访问msg属性，`console.log(vm.msg)`，当访问`vm.msg`时，首先会触发vue.js中的_proxyData中get方法，而vue.js中的get方法又调用了`data[key]`，当访问`data[key]`时，又会触发observer.js中`defineReactive`中的get方法。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/PgsKkopbcXZBNm6.png)
+![](http://5coder.cn/img/PgsKkopbcXZBNm6.png)
 
 > 上图中的vue.js第29行键入错误，改为`data[key] = newValue`。
 
 打开浏览器，控制台正常打印出来了`'Hello Vue'`。当将observer中的get方法中返回的`val`改变为`obj[key]`。时，查看浏览器控制台出现报错——**堆栈溢出**。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/VSnf2aMutcoQlh3.png)
+![](http://5coder.cn/img/VSnf2aMutcoQlh3.png)
 
 此时在observer.js中的19行出现错误，内容是`return obj[key]`，此处的obj就是data对象，当访问data[key]时就会触发此处的get方法。这就形成**死递归**，这就是传递`val`参数而不是直接使用`obj[key]`的原因。
 
 此处还有一个细节，当`defineReactive`方法调用完成之后，val参数是一个局部变量，所以他的值应该被释放掉，但是在index.html中依然可以打印出来，原因就此处形成了闭包，提升了`val`的作用域。defineReactive第一个参数obj其实就是$data对象，$data中引用了get方法，而get方法又对val有引用，也就是外部对get方法有引用，而get方法又用到了val，所以此处发生了闭包，所以val的值并没有被释放掉。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/G591WQvneaxoZyI.png)
+![](http://5coder.cn/img/G591WQvneaxoZyI.png)
 
 #### Observer-defineReactive 2
 
@@ -598,17 +598,17 @@ defineReactive中的两个问题，
 
    - 处理前
 
-     ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/U2oFrSq8wCsH1lO.png)
+     ![](http://5coder.cn/img/U2oFrSq8wCsH1lO.png)
 
      在浏览器控制台打印vm实例，发现person对象的name属性并没有getter和setter方法，也就是并未被转换成响应式，只对**person对象**进行响应式处理，并未对**person内部属性**做任何处理。
 
    - 处理后
 
-     ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/G7NRC4B3ngskWZ5.png)
+     ![](http://5coder.cn/img/G7NRC4B3ngskWZ5.png)
 
      浏览器测试，发现person对象的name属性也具有getter和setter，第一个问题解决。
 
-     ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/wlLZJDkihvgH3te.png)
+     ![](http://5coder.cn/img/wlLZJDkihvgH3te.png)
 
 2. **当data的当前属性重新赋值成一个新对象的时候，该对象的内部属性需要转换成响应式数据**
 
@@ -616,15 +616,15 @@ defineReactive中的两个问题，
 
      将data中的msg属性的值由字符串改为对象`vm.msg = { test: 'Hello' }`，观察更改后的对象的属性test属性并没有getter和setter方法，同样$data中的msg对象的属性test也没有getter和setter。
 
-     ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/pcgEkSm7WLQNOwJ.png)
+     ![](http://5coder.cn/img/pcgEkSm7WLQNOwJ.png)
 
    - 处理后
 
-     ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/qbjvRndk9asSt4Y.png)
+     ![](http://5coder.cn/img/qbjvRndk9asSt4Y.png)
 
      浏览器测试，发现新修改的msg的值中的test属性也具有getter和setter，为响应式的。
 
-     ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/YtFyesvKrgHLGPA.png)
+     ![](http://5coder.cn/img/YtFyesvKrgHLGPA.png)
 
 ### 2.4.Compiler
 
@@ -638,7 +638,7 @@ defineReactive中的两个问题，
 
 结构
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/S6dLN3w7rbEehjc.png)
+![](http://5coder.cn/img/S6dLN3w7rbEehjc.png)
 
 基本结构实现：
 
@@ -712,11 +712,11 @@ compile(el) {
 
 首先在compileText中打印出node节点的内容
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1DkHvEN4wjUtByc.png)
+![](http://5coder.cn/img/1DkHvEN4wjUtByc.png)
 
 打开浏览器，打印结果如下图：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/KQyOBhqp14eArdk.png)
+![](http://5coder.cn/img/KQyOBhqp14eArdk.png)
 
 接下来开始写compileText的内容。
 
@@ -739,7 +739,7 @@ compileText(node) {
 
 打开浏览器测试，发现index.html中的插值表达式已经被替换成正确的值了
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/JQ9g4wIbsvy6NGC.png)
+![](http://5coder.cn/img/JQ9g4wIbsvy6NGC.png)
 
 #### Compiler-compileElement
 
@@ -749,7 +749,7 @@ compileText(node) {
 
 观察属性节点，name为指令名称，value为指令的值，也就是对应的vm实例中的属性名。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/gKnAQBHwrRoELZD.png)
+![](http://5coder.cn/img/gKnAQBHwrRoELZD.png)
 
 代码实现
 
@@ -788,11 +788,11 @@ modelUpdater(node, value) {
 }
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/LkSXbnzEtPy3cvT.png)
+![](http://5coder.cn/img/LkSXbnzEtPy3cvT.png)
 
 打开浏览器测试，发现v-指令中的内容全部被替换成为真实的值。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/rypSQYKwDICv7BH.png)
+![](http://5coder.cn/img/rypSQYKwDICv7BH.png)
 
 #### Compiler复习
 
@@ -895,7 +895,7 @@ class Compiler {
 
 ### 2.5.Dep
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/WAQm6v9sdrKCn3l.png)
+![](http://5coder.cn/img/WAQm6v9sdrKCn3l.png)
 
 功能：
 
@@ -904,7 +904,7 @@ class Compiler {
 
 结构：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/qiOb7STVP9EzapF.png)
+![](http://5coder.cn/img/qiOb7STVP9EzapF.png)
 
 代码实现：
 
@@ -941,7 +941,7 @@ class Dep {
 
 Dep类的作用是收集依赖和发送通知，需要为每一个响应式数据创建一个Dep对象，在使用响应式数据的时收集依赖，也就是创建观察者对象，当数据变化的时候，通知所有观察者，调用观察者的`update`的方法更新视图，所以需要在observer中来创建Dep对象。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/8qLOb1R9GohAIvg.png)
+![](http://5coder.cn/img/8qLOb1R9GohAIvg.png)
 
 `observer`类中的`get`方法中，当访问属性的值的时去收集依赖，在收集依赖的时候首先要判断`Dep`这个类有没有设置静态属性`target`，也就是观察者对象，但是在定义`Dep`这个类的时候并没有给这个类设置它的属性，它的这个属性是在`watcher`对象中来添加的，在写`watcher`的时候再回过来看。首先判断`Dep`这个类有没有`target`这个静态属性，如果有的话再进入`Dep`对象的`addSub()`方法去添加观察者。
 
@@ -949,7 +949,7 @@ Dep类的作用是收集依赖和发送通知，需要为每一个响应式数�
 
 watcher
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/eQP8Acin3tmpr5D.png)
+![](http://5coder.cn/img/eQP8Acin3tmpr5D.png)
 
 在`data`中的属性的`getter`方法中，通过`Dep`对象收集依赖，在`data`属性的`setter`方法中，通过`Dep`对象触发依赖。所以`data`中的每一个属性都需要创建一个`Dep`对象，在收集依赖时，把依赖该数据的所有`watcher`(观察者对象)添加到`Dep`对象中的`subs`数组中。在`setter`方法中去触发依赖，也就是发送通知，调用`Dep`对象的`notify`方法去通知所有关联的`watcher`对象，watcher对象负责更新对应的视图。
 
@@ -960,7 +960,7 @@ watcher
 
 结构
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/ZmEdC5uB14vhyig.png)
+![](http://5coder.cn/img/ZmEdC5uB14vhyig.png)
 
 ```js
 class Watcher {
@@ -996,11 +996,11 @@ class Watcher {
 
 compiler.js中的compileText方法，在处理插值表达式时创建watcher对象
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/txg8LHGMnqXJZaA.png)
+![](http://5coder.cn/img/txg8LHGMnqXJZaA.png)
 
 index.html中引入
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/JnZrkD3VUTNA8y2.png)
+![](http://5coder.cn/img/JnZrkD3VUTNA8y2.png)
 
 打开浏览器控制台，改变插值表达式绑定的值msg
 
@@ -1008,7 +1008,7 @@ index.html中引入
 vm.msg = 'xxx'
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/rXgSAIemNzB53Ed.png)
+![](http://5coder.cn/img/rXgSAIemNzB53Ed.png)
 
 #### 创建watcher对象2
 
@@ -1169,7 +1169,7 @@ modelUpdater(node, value, key) {
 
 测试，当输入框的值改变时，插值表达式和v-text对应的视图也会发生变化。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/doKJPLU1G7HqtXe.png)
+![](http://5coder.cn/img/doKJPLU1G7HqtXe.png)
 
 ### 2.8.调试
 
@@ -1191,15 +1191,15 @@ modelUpdater(node, value, key) {
 
   重新给属性赋值成对象，该属性依然是响应式的。在observer.js中，当重新赋值时，触发defineReactive方法中的set方法，首先记录newValue也就是新对象的值，然后调用that.walk方法，重新遍历newValue的所有属性，并重新调用defineReactive方法。
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/bRYNsQcxuE6XA8M.png)
+  ![](http://5coder.cn/img/bRYNsQcxuE6XA8M.png)
 
 - 给Vue实例新增一个成员是否是响应式的？（[官方文档](https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9)）
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/HyEFBuSLljkAsIM.png)
+  ![](http://5coder.cn/img/HyEFBuSLljkAsIM.png)
 
   data中的属性是在new Vue中，通过new Observer()转换成响应式数据，而手动给vm添加一个test属性，并没有经过observer处理，仅仅是在vm上添加了一个普通的js属性，所以不是响应式的。
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/2naKVrAsozIleDJ.png)
+  ![](http://5coder.cn/img/2naKVrAsozIleDJ.png)
 
 
 
@@ -1207,7 +1207,7 @@ modelUpdater(node, value, key) {
 
 整体流程
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/C1BAcQ4KMIHDRTw.png)
+![](http://5coder.cn/img/C1BAcQ4KMIHDRTw.png)
 
 - Vue
   - 记录传入的选项，设置`$data/$el`

@@ -50,7 +50,7 @@ fn()
 
 上述函数体内定义一个数组，数组长度足够大，为了当前函数在调用的时，程序可以向内存申请比较大的内存空间。执行函数过程中，我们使用性能检测工具，我们会发现，内存变化如下，内存持续升高，且并没有回落，这就是**内存泄漏**。内存泄漏会导致我们的页面处于卡顿状态，因此需要对内存进行人为管理。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/1ygFrKDCSvhGX6m.png)
+![](http://5coder.cn/img/1ygFrKDCSvhGX6m.png)
 
 
 
@@ -118,12 +118,12 @@ console.log(obj)
 
 **可达对象图示**
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/dnkGj8bH4vzoZCp.png)
+![](http://5coder.cn/img/dnkGj8bH4vzoZCp.png)
 
 
 如果我们在代码中做一些操作，比如使用delete将obj上的o1的应用以及o2中对obj1的应用删除掉，那么出现下面的情况：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/WgRhFJ7xmadZzfu.png)
+![](http://5coder.cn/img/WgRhFJ7xmadZzfu.png)
 
 
 
@@ -206,7 +206,7 @@ console.log(obj)
 - 遍历所有对象清除没有标记对象
 - 回收相应的空间
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/EbjthkT2PHoQWar.png)
+![](http://5coder.cn/img/EbjthkT2PHoQWar.png)
 
 
 
@@ -228,8 +228,8 @@ console.log(obj)
 - 标记整理可以看作是标记清除的增强
 - 标记阶段的操作和标记清除一致
 - **清除阶段会先执行整理，移动对象位置**
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/fix37uO2hUNelFv.png)
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/YEVdhFxWa9CJPHw.png)
+  ![](http://5coder.cn/img/fix37uO2hUNelFv.png)
+  ![](http://5coder.cn/img/YEVdhFxWa9CJPHw.png)
 
 
 优缺点：该算法可以有效的利用堆，但是整理需要花比较多的时间成本
@@ -252,7 +252,7 @@ console.log(obj)
 
 V8 使用了分代和大数据的内存分配，在回收内存时使用精简整理的算法标记未引用的对象，然后消除没有标记的对象，最后整理和压缩那些还未保存的对象，即可完成垃圾回收。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/UDEPWurlJf38TgN.png)
+![](http://5coder.cn/img/UDEPWurlJf38TgN.png)
 
 
 **V8中常用的GC算法**
@@ -269,7 +269,7 @@ V8 使用了分代和大数据的内存分配，在回收内存时使用精简�
 >
 > **年轻分代中的对象有机会晋升为年老分代，条件主要有两个：一个是对象是否经历过Scavenge回收，一个是To空间的内存占用比超过限制。**
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/8MIBQo1xF6SYPz4.png)
+![](http://5coder.cn/img/8MIBQo1xF6SYPz4.png)
 
 
 V8**内存分配**
@@ -314,7 +314,7 @@ V8**内存分配**
 
 **增量标记优化垃圾回收**
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/15sl9QVXnHtSxwo.png)
+![](http://5coder.cn/img/15sl9QVXnHtSxwo.png)
 
 图示中，程序在标记阶段被暂停运行，等待标记完成自动运行，当遇到大块需要标记的对象时，程序需要暂停很长一段时间，对用户体验很不友好，因此采用增量标记，将一大块分解为多个小块进行标记，减少每次程序暂停的时长，优化用户体验。最后标记完成后统一进行回收。
 
@@ -374,13 +374,13 @@ Performance使用步骤为：
 
 记录JavaScript内存（**JavaScript堆占用的内存，表示界面中所有可达对象占用的内存**）及内存占用空间（**原生内存，DOM节点占用的内存**），点击按钮，记录每次内存的变化。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/SPLj7pfv2G8uIgr.gif)
+![](http://5coder.cn/img/SPLj7pfv2G8uIgr.gif)
 
 #### 3.2Timeline记录内存
 
 上述浏览器任务管理器更多的是用于判断当前脚本是否存在内存问题，而不能具体定位到问题。我们使用Timeline时间线记录内存变化，更精确的记录到内存变化。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/R7IQYzxwmM5WTnK.gif)
+![](http://5coder.cn/img/R7IQYzxwmM5WTnK.gif)
 
 
 #### 3.3堆快照查找分离DOM
@@ -391,7 +391,7 @@ Performance使用步骤为：
 - 垃圾对象时的DOM节点（当前DOM从存活的DOM树上分离，且js中没有应用这个DOM）
 - 分离状态的DOM节点（当前DOM节点从当前DOM树分离，但js中还在应用它）
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/sG2P5SjBt6xdKRU.gif)
+![](http://5coder.cn/img/sG2P5SjBt6xdKRU.gif)
 
 
 在点击按钮后，DOM中生成了分离的DOM，造成内存空间的浪费，因此我们需要将代码中的temEle置空，这样让GC对垃圾进行回收即可。
@@ -418,7 +418,7 @@ Performance使用步骤为：
 - 本质上就是采集大量的执行脚本进行数学统计和分析
 - 使用基于Benchmark.js的https://jsbench.me/使用
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/dK9hqBWRvkMaZEy.png)
+![](http://5coder.cn/img/dK9hqBWRvkMaZEy.png)
 
 
 代码需要优化的原因：
@@ -471,7 +471,7 @@ fn()
 
 测试结果：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/IHKBSgCf3hk5eT7.png)
+![](http://5coder.cn/img/IHKBSgCf3hk5eT7.png)
 
 
 ```js
@@ -487,7 +487,7 @@ for (let i = 0; i < 1000; i++) {
 
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/YCe95UdsnzbRIGy.png)
+![](http://5coder.cn/img/YCe95UdsnzbRIGy.png)
 
 
 **缓存全局变量**代码演示：
@@ -528,7 +528,7 @@ function getBtn2() {
 
 测试结果：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/qkaxNHsS9b51AV7.png)
+![](http://5coder.cn/img/qkaxNHsS9b51AV7.png)
 
 
 ### 3.通过原型对象添加附加方法
@@ -552,7 +552,7 @@ let f2 = new fn2()
 
 测试结果：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/gB4rej8DLWpXE1V.png)
+![](http://5coder.cn/img/gB4rej8DLWpXE1V.png)
 
 
 ### 4.避开闭包陷阱
@@ -612,7 +612,7 @@ const b = p2.age
 
 测试结果：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/DJc2S8mXkajpEtM.png)
+![](http://5coder.cn/img/DJc2S8mXkajpEtM.png)
 
 
 ### 6.For循环优化及选择最优循环方法
@@ -632,7 +632,7 @@ for (var i = arrList.length; i; i--) {
 
 测试结果：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Wxw3UcVpADs6IjO.png)
+![](http://5coder.cn/img/Wxw3UcVpADs6IjO.png)
 
 
 **选择最优循环方法**
@@ -654,7 +654,7 @@ for (var i in arrList) {
 
 测试结果（forEach效率最高）：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/tes9K4yoF3XQH6T.png)
+![](http://5coder.cn/img/tes9K4yoF3XQH6T.png)
 
 
 ### 7.文档碎片优化节点添加、克隆优化节点操作
@@ -687,7 +687,7 @@ document.body.appendChild(fragEle)  </script>
 
 测试结果：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/rvEJSaMpK26j54Z.png)
+![](http://5coder.cn/img/rvEJSaMpK26j54Z.png)
 
 
 **克隆优化节点操作**
@@ -719,7 +719,7 @@ for (var i = 0; i < 3; i++) {
 
 测试结果：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/fzEUXm5dwyingl7.png)
+![](http://5coder.cn/img/fzEUXm5dwyingl7.png)
 
 
 ### 8.直接量替换new Object
@@ -732,7 +732,7 @@ var a1 = new Array(3)a1[0] = 1a1[1] = 2a1[2] = 3
 ```
 
 测试结果：
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/BUjOkDgVzJPSIT9.png)
+![](http://5coder.cn/img/BUjOkDgVzJPSIT9.png)
 
 ### 9.堆栈中的JS执行过程
 
@@ -753,7 +753,7 @@ let fn = foo(2);
 fn(3);
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/FgN4vncbWzUrQp9.jpg)
+![](http://5coder.cn/img/FgN4vncbWzUrQp9.jpg)
 
 
 ### 10.减少判断层
@@ -827,7 +827,7 @@ foo()
 
 测试结果：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/eFGblMkyauDAO8K.png)
+![](http://5coder.cn/img/eFGblMkyauDAO8K.png)
 
 
 ### 12.减少数据读取次数
@@ -860,7 +860,7 @@ console.log(hasEle(oBox, 'skip'))    </script>
 
 测试结果：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/53YtRCWn2o1jsaT.png)
+![](http://5coder.cn/img/53YtRCWn2o1jsaT.png)
 
 
 ### 13.字面量与构造式
@@ -884,7 +884,7 @@ console.log(test())
 
 测试结果：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/LUPtoS5zT64Nx8B.png)
+![](http://5coder.cn/img/LUPtoS5zT64Nx8B.png)
 
 
 ### 14.减少循环体中活动
@@ -911,7 +911,7 @@ var test = () => {
 
 测试结果：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Lw4hojUnXibfu2x.png)
+![](http://5coder.cn/img/Lw4hojUnXibfu2x.png)
 
 ### 15.惰性函数与性能
 

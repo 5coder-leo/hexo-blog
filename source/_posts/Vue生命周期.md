@@ -12,7 +12,7 @@ category: 大前端(杂识)
 
 每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做**生命周期钩子**的函数，这给了用户在不同阶段添加自己的代码的机会。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/ufJwjZr6YklT4F7.png)
+![](http://5coder.cn/img/ufJwjZr6YklT4F7.png)
 
 
 ```html

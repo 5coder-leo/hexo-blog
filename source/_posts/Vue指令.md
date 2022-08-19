@@ -52,7 +52,7 @@ category: 大前端(杂识)
 </template>
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/20210323152850534.png)
+![](http://5coder.cn/img/20210323152850534.png)
 
 
 ## 2.v-show

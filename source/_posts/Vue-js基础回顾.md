@@ -17,11 +17,11 @@ Vue代码的基础结构：
 
 1. 这是最基础的Vue代码，在创建Vue实例时，传入`el`和`data`选项，Vue内部会把`data`中的数据传入到`el`指向的模板中，并把模板渲染到浏览器。
 
-![image-20210523093150780](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/98EjT6puZt5nlBF.png)
+![image-20210523093150780](http://5coder.cn/img/98EjT6puZt5nlBF.png)
 
 2. 本段代码执行的效果与上面相同，这里使用了render选项和**$mount**方法。使用**Vue-cli**脚手架创建的代码解构与下面的代码相同，**render**方法接受一个参数，参数为**h**函数，**h**函数在后面的笔记中会有详细的讲解，这里简单介绍一下，h函数的作用是创建虚拟dom，**render**方法把h函数创建的虚拟dom返回。​**$mount**的作用是把虚拟dom转换成真实dom渲染到浏览器。
 
-![image-20210523093852667](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/TnFxfGS3zP5iYOV.png)
+![image-20210523093852667](http://5coder.cn/img/TnFxfGS3zP5iYOV.png)
 
 # 二、Vue的生命周期
 
@@ -29,7 +29,7 @@ Vue代码的基础结构：
 
 每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做**生命周期钩子**的函数，这给了用户在不同阶段添加自己的代码的机会。
 
-![20210323232204766.png](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/9mk8PLyboMi6uwV.png)
+![20210323232204766.png](http://5coder.cn/img/9mk8PLyboMi6uwV.png)
 
 ```html
 <!DOCTYPE html>

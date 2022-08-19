@@ -65,7 +65,7 @@ Vue1.x中细粒度监测数据的变化，每个属性对应一个watcher，开�
   })
   ```
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210709061932450.png)
+  ![](http://5coder.cn/img/image-20210709061932450.png)
 
 - h函数（createElement[官方文档](https://cn.vuejs.org/v2/guide/render-function.html#createElement-%E5%8F%82%E6%95%B0)）
 
@@ -89,7 +89,7 @@ Vue1.x中细粒度监测数据的变化，每个属性对应一个watcher，开�
 
 ## 虚拟DOM创建过程
 
-![整体过程分析](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/整体过程分析.png)
+![整体过程分析](http://5coder.cn/img/整体过程分析.png)
 
 ## createElement
 
@@ -801,4 +801,4 @@ updateChildren和Snabbdom中的updateChildren整体算法一致，这里不再�
 
 ## 总结
 
-![整体过程分析](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/整体过程分析.png)
+![整体过程分析](http://5coder.cn/img/整体过程分析.png)

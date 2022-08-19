@@ -37,7 +37,7 @@ cover:
 
 ### Nuxt.js框架是如何运作的？
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210722221056696.png)
+![](http://5coder.cn/img/image-20210722221056696.png)
 
 Nuxt.js集成了以下组件/框架，用于开发完整而强大的Web应用：
 
@@ -176,7 +176,7 @@ Nuxt.js 依据 `pages` 目录结构自动生成 vue-router 模块的路由配置
 
 假设pages的目录结构如下：
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210722223136076.png)
+![](http://5coder.cn/img/image-20210722223136076.png)
 
 那么Nuxt.js自动生成的路由配置如下：
 
@@ -204,7 +204,7 @@ router: {
 
 自动生成的`.nuxt/router.js`
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210722230731656.png)
+![](http://5coder.cn/img/image-20210722230731656.png)
 
 ### [路由导航](https://router.vuejs.org/zh/guide/)
 
@@ -327,9 +327,9 @@ export default {
 
 > You can access the current route parameters within your local page or component by referencing `this.$route.params.{parameterName}`. For example, if you had a dynamic users page (`users\_id.vue`) and wanted to access the `id` parameter to load the user or process information, you could access the variable like this: `this.$route.params.id`.
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210723061713653.png)
+![](http://5coder.cn/img/image-20210723061713653.png)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210723061749059.png)
+![](http://5coder.cn/img/image-20210723061749059.png)
 
 ### 嵌套路由
 
@@ -474,9 +474,9 @@ router: {
 }
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210723063147108.png)
+![](http://5coder.cn/img/image-20210723063147108.png)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210723063221316.png)
+![](http://5coder.cn/img/image-20210723063221316.png)
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20210723063237799.png)
+![](http://5coder.cn/img/image-20210723063237799.png)
 

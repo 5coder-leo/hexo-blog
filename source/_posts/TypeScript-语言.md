@@ -102,7 +102,7 @@ JavaScript中所有的类型错误都是在代码执行（逻辑判断）的过�
   // 在JavaScript中，变量是没有类型的。而变量中存放的值是有类型的
   ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/fPas346JDgeFwyu.png)
+![](http://5coder.cn/img/fPas346JDgeFwyu.png)
 
 
 ### 3.JavaScript类型系统特征

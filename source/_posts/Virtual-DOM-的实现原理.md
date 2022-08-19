@@ -73,7 +73,7 @@ img: /medias/featureimages/18.jpg
 
   jQuery开发的列表[demo](https://codesandbox.io/s/jq-demo-5i7qp?file=/index.html)，列表有三种功能：增加、排序、删除，三种功能增加渐变效果，在2s之内把透明度从0变为1。通过点击增加、排序、删除按钮，发现页面每次都需要闪烁，其内部是重新渲染所有列表，性能消耗较高
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/izVHJKWlDroh2tT.gif)
+  ![](http://5coder.cn/img/izVHJKWlDroh2tT.gif)
 
 - 为了简化DOM的负责操作，于是出现了各种的MVVM框架，MVVM矿建解决了视图和状态的同步问题
 
@@ -83,7 +83,7 @@ img: /medias/featureimages/18.jpg
 
   Virtual DOM列表[案例演示](https://codesandbox.io/s/jq-demo-4hbyb?file=/index.html)，可以看到当点击增加时，只有列表第一条在变化，整个页面并没有闪烁。通过Virtual DOM可有效减少DOM操作，Virtual记录上一次状态。
 
-  ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/gDTbA1F7hZCS2oz.gif)
+  ![](http://5coder.cn/img/gDTbA1F7hZCS2oz.gif)
 
 - 参考GitHub上[virtual-dom](https://github.com/Matt-Esch/virtual-dom)的描述
 
@@ -100,7 +100,7 @@ img: /medias/featureimages/18.jpg
   - 原生应用(Weex/React Native)
   - 小程序(mpvue/uni-app)等
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/5QhHaZcxpKoCDJl.png)
+![](http://5coder.cn/img/5QhHaZcxpKoCDJl.png)
 
 ### 5.Virtual DOM库
 
@@ -197,7 +197,7 @@ img: /medias/featureimages/18.jpg
 
   > 注意：此时运行的话，项目会报错，提示找不到`init/h`模块，因为模块路径并不是`snabbdom/init`，这个路径是在package.json中的`exports`字段设置的，而我们使用的打包工具不支持`exports`这个字段，webpack4也不支持，webpack5支持该字段。
   >
-  > ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/fvRIz9ZgeTPwF1c.png)
+  > ![](http://5coder.cn/img/fvRIz9ZgeTPwF1c.png)
   >
   > 该字段在导入`snabbdom/init`的时候回补全路径成`snabbdom/build/package/init.js`
 
@@ -277,13 +277,13 @@ let oldVnode = patch(app, vnode)
 
 命令行运行`yarn dev`，查看结果
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/Yj5s46tyR73bPZc.png)
+![](http://5coder.cn/img/Yj5s46tyR73bPZc.png)
 
 再加一个小功能：假设页面上有一个按钮，当点击按钮时，把`id`是`container`的`div`改成Hello Snabbdom，并且更改类样式。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/lb7zgO1VPkB93mY.png)
+![](http://5coder.cn/img/lb7zgO1VPkB93mY.png)
 
-结果演示：![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/KV4UkexDc5uRtis.png)
+结果演示：![](http://5coder.cn/img/KV4UkexDc5uRtis.png)
 
 案例二：在`div`中创建两个子元素：`h`和`p`标签。
 
@@ -301,7 +301,7 @@ let app = document.querySelector('#app')
 let oldVNode = patch(app, vnode)
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/luEnD57tcdWOeAs.png)
+![](http://5coder.cn/img/luEnD57tcdWOeAs.png)
 
 拓展1：
 
@@ -330,7 +330,7 @@ setTimeout(() => {
 }, 2000)
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/ZzFB7SoLud3VstD.gif)
+![](http://5coder.cn/img/ZzFB7SoLud3VstD.gif)
 
 拓展2：
 
@@ -356,7 +356,7 @@ setTimeout(() => {
 }, 2000)
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/XWG9SNfIaOwcbgy.gif)
+![](http://5coder.cn/img/XWG9SNfIaOwcbgy.gif)
 
 ### 4.模块
 
@@ -420,7 +420,7 @@ let app = document.querySelector('#app')
 patch(app, vnode)
 ```
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/L1sDmbwxZ7SnjqG.png)
+![](http://5coder.cn/img/L1sDmbwxZ7SnjqG.png)
 
 ## 三、Snabbdom源码解析
 
@@ -663,7 +663,7 @@ patch(app, vnode)
     - 如果新的`VNode`有`children`，判断子节点是否有变化，判断子节点的过程使用的就是`diff`算法
 - `diff`过程只是进行同层级比较
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/ykzGs5gIqB8DFa2.png)
+![](http://5coder.cn/img/ykzGs5gIqB8DFa2.png)
 
 #### init
 
@@ -1057,7 +1057,7 @@ function addVnodes (
     - 设置DOM元素的`textContent`为`vnode.text`
   - 最后执行用户设置的`postpatch`钩子函数
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/aSVb3ZNoyTWgeck.png)
+![](http://5coder.cn/img/aSVb3ZNoyTWgeck.png)
 
 源码位置：src/package/init.ts
 
@@ -1125,7 +1125,7 @@ function patchVnode (oldVnode: VNode, vnode: VNode, insertedVnodeQueue: VNodeQue
 
   - 因此只需要找**同级别**的**子节点**一次比较，然后**再找下一级别的节点比较**，这样算法的时间复杂度为O(n)
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/HOKszpbk76tA9yZ.png)
+    ![](http://5coder.cn/img/HOKszpbk76tA9yZ.png)
 
   - 在进行同级别节点比较的时候，首先会对新老节点数组的**开始和结尾**节点设置**标记索引**，遍历的过程中移动索引
 
@@ -1139,7 +1139,7 @@ function patchVnode (oldVnode: VNode, vnode: VNode, insertedVnodeQueue: VNodeQue
 
     - `oldEndVnode` / `newStartVnode`（旧结束节点 / 新开始节点）
 
-      ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/ZjSoAHM1vYNJCm5.png)
+      ![](http://5coder.cn/img/ZjSoAHM1vYNJCm5.png)
 
   - 开始节点和结束节点比较，这两种情况类似
 
@@ -1152,7 +1152,7 @@ function patchVnode (oldVnode: VNode, vnode: VNode, insertedVnodeQueue: VNodeQue
 
     - 把旧开始和新开始索引往后移动`oldStartIdx++` / `oldEndIdx++`
 
-      ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/njXLUz5tsFNWvql.png)
+      ![](http://5coder.cn/img/njXLUz5tsFNWvql.png)
 
   - `oldStartVnode` / `newEndVnode`（旧开始节点 / 新结束节点）相同
 
@@ -1162,7 +1162,7 @@ function patchVnode (oldVnode: VNode, vnode: VNode, insertedVnodeQueue: VNodeQue
 
     - 更新索引
 
-      ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20200103125428541.png)
+      ![](http://5coder.cn/img/image-20200103125428541.png)
 
   - `oldEndVnode` / `newStartVnode`（旧结束节点 / 新开始节点）相同
 
@@ -1172,7 +1172,7 @@ function patchVnode (oldVnode: VNode, vnode: VNode, insertedVnodeQueue: VNodeQue
 
     - 更新索引
 
-      ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20200103125735048.png)
+      ![](http://5coder.cn/img/image-20200103125735048.png)
 
   - 如果不是以上四种情况
 
@@ -1190,7 +1190,7 @@ function patchVnode (oldVnode: VNode, vnode: VNode, insertedVnodeQueue: VNodeQue
           - 重新创建对应的DOM元素，插入到DOM树中
         - 如果相同，把`elmToMove`对应的DOM元素，移动到左边
 
-        ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20200109184822439.png)
+        ![](http://5coder.cn/img/image-20200109184822439.png)
 
   - 循环结束
 
@@ -1199,11 +1199,11 @@ function patchVnode (oldVnode: VNode, vnode: VNode, insertedVnodeQueue: VNodeQue
 
   - 如果老节点的数组先遍历完（`oldStartIdx > oldEndIdx`），说明新节点有剩余，把剩余节点批量插入到右边
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20200103150918335.png)
+    ![](http://5coder.cn/img/image-20200103150918335.png)
 
   - 如果新节点的数组先遍历完（`newStartIdx > newEndIdx`），说明老节点有剩余，把剩余节点批量删除
 
-    ![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/image-20200109194751093.png)
+    ![](http://5coder.cn/img/image-20200109194751093.png)
 
 - 源码位置：src/package/init.ts
 

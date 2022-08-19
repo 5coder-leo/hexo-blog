@@ -38,7 +38,7 @@ console.log('Global end')
 
 复制地址到浏览器地址栏查看动图演示：
 
-https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/202208152208328.gif
+http://5coder.cn/img/202208152208328.gif
 
 分析：
 
@@ -82,7 +82,7 @@ console.log('global end')
 
 复制地址到浏览器地址栏查看动图演示：
 
-https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/202208152208762.gif
+http://5coder.cn/img/202208152208762.gif
 
 分析：
 

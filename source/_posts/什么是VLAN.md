@@ -61,7 +61,7 @@ VLAN中文是“虚拟局域网”。LAN可以是由少数几台家用计算机�
 
 
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/sXF6iOJ5BpS4kNC.jpg)
+![](http://5coder.cn/img/sXF6iOJ5BpS4kNC.jpg)
 
 
 
@@ -77,7 +77,7 @@ VLAN中文是“虚拟局域网”。LAN可以是由少数几台家用计算机�
 
 
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/QNSoe1xaEkpODib.jpg)
+![](http://5coder.cn/img/QNSoe1xaEkpODib.jpg)
 
 
 
@@ -120,7 +120,7 @@ VLAN中文是“虚拟局域网”。LAN可以是由少数几台家用计算机�
 > **网络B：**的IP地址范为“192.168.2.1~192.168.2.254”，子网掩码255.255.255.0。
 > 如果需要与其它网段通信，那么它的网关可以设置为192.168.2.1，当然也可以设置为**网段内**其它的一个ip地址。
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/FdwNiZLtQoepXMD.jpg)
+![](http://5coder.cn/img/FdwNiZLtQoepXMD.jpg)
 
 
 
@@ -168,7 +168,7 @@ MAC是网络中用来标识网卡设备的唯一网络地址。由相关硬件�
 
 
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/a29fgLdsZJrPp6A.jpg)
+![](http://5coder.cn/img/a29fgLdsZJrPp6A.jpg)
 
 
 

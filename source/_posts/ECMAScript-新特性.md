@@ -6,7 +6,7 @@ abbrlink: 1486
 date: 2021-05-19 22:54:24
 ---
 
-![](https://gitee.com/coder5leo/markdown-picture-bed/raw/master/img/WA5K6I3aVkFueLb.png)
+![](http://5coder.cn/img/WA5K6I3aVkFueLb.png)
 
 ## 一、ECMAScript概述
 
