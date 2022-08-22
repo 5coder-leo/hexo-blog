@@ -9,7 +9,7 @@ top: false
 
 # TypeScript语言-前置知识
 
-## ①、强类型与弱类型、静态类型与动态类型
+## 一、强类型与弱类型、静态类型与动态类型
 
 ### 1.强类型与弱类型（类型安全）
 
@@ -137,7 +137,7 @@ obj.foo();
 示例二：非预期结果
 
 ```js
-function sun(a, b) {
+function sum(a, b) {
 	return a + b;
 }
 
@@ -162,7 +162,7 @@ console.log(obj['true']);  // 100
 
 ### 1.概述
 
-flow是 facebook 出品的 JavaScript **静态类型检查工具，https://flow.org/en/docs/usage/**这是其官方文档链接。Vue.js 的源码利用了Flow 做了静态类型检查。
+flow是 facebook 出品的 JavaScript **静态类型检查工具，https://flow.org/en/docs/usage/**  这是其官方文档链接。Vue.js 的源码利用了Flow 做了静态类型检查。
 
 **JavaScript** 是**动态类型语言**，它的灵活性有目共睹，但是过于灵活的副作用是很容易就写出**非常隐蔽的隐患代码**，在**编译期**甚至看上去都**不会报错**，但在**运行阶段**就可能出现**各种奇怪的 bug**
 
@@ -195,41 +195,43 @@ add('Hello', 11)
 
    - 关闭VS Code语法校验：setting，搜索JavaScript validate，找到enable，取消勾选
 
-   - ```js
-     // @flow
-     
-     function sum(a:number, b:number) {
-     	return a + b;
-     }
-     
-     sum(100, 100)
-     sum('100', '100')
-     
-     let num:number = 100
-     num = '100'
-     ```
 
-4. 使用
+```js
 
-   - ```shell
-     yarn flow init
-     yarn flow  # 第一次会很慢，后续会很快
-     # yarn flow stop # 结束flow
-     
-     #Error ---------------------------------------------------------------------------------------------------- 01/01.js:8:12
-     
-     #Cannot call `sum` with `'100'` bound to `b` because string [1] is incompatible with number [2]. [incompatible-call]
-     
-     #   01/01.js:8:12
-     #   8| sum('100', '100')
-     #                 ^^^^^ [1]
-     
-     #References:
-     #   01/01.js:3:26
-     #   3| function sum(a:number, b:number) {
-     #                               ^^^^^^ [2]
-     
-     ```
+// @flow
+
+function sum(a:number, b:number) {
+	return a + b;
+}
+
+sum(100, 100)
+sum('100', '100')
+
+let num:number = 100
+num = '100'
+```
+
+使用
+
+```shell
+yarn flow init
+yarn flow  # 第一次会很慢，后续会很快
+# yarn flow stop # 结束flow
+
+#Error ---------------------------------------------------------------------------------------------------- 01/01.js:8:12
+
+#Cannot call `sum` with `'100'` bound to `b` because string [1] is incompatible with number [2]. [incompatible-call]
+
+#   01/01.js:8:12
+#   8| sum('100', '100')
+#                 ^^^^^ [1]
+
+#References:
+#   01/01.js:3:26
+#   3| function sum(a:number, b:number) {
+#                               ^^^^^^ [2]
+
+```
 
 ### 3.编译移除注解
 
@@ -280,7 +282,10 @@ flow支持在代码编写过程中就进行类型推断，例如下面代码中�
 在绝大多数情况下一样，它可以帮我们推断出来变量，或者是参数的具体类型，但是没有必要给所有的成员都去添加，它可以更明确的去限制类型注解，而且对我们后期去理解，也是有帮助的可能去使用。
 
 ```js
-let num:number = 100;// num = 'string',此时只能赋值数字类型function foo():number {    return 100}// 此时函数只能返回数字类型，如果函数没有返回值，默认返回undefined，那么也会提醒报错。没有返回值的函数，我们需要将函数返回值类型标注为void
+let num:number = 100;  // num = 'string',此时只能赋值数字类型
+function foo():number {
+    return 100
+}// 此时函数只能返回数字类型，如果函数没有返回值，默认返回undefined，那么也会提醒报错。没有返回值的函数，我们需要将函数返回值类型标注为void
 ```
 
 ### 7.原始类型
@@ -434,11 +439,35 @@ passAny('string')
 passAny(100)
 ```
 
+### **13.Flow类型小结**
+
+Flow所有类型的文档：
+
+https://flow.org/en/docs/types
+
+第三方类型手册
+
+https://www.saltycrane.com/cheat-sheets/flow-type/latest/
+
+### 14.Flow运行环境API
+
+- https://github.com/facebook/flow/blob/master/lib/core.js
+
+- https://github.com/facebook/flow/blob/master/lib/dom.js
+
+- https://github.com/facebook/flow/blob/master/lib/bom.js
+
+- https://github.com/facebook/flow/blob/master/lib/cssom.js
+
+- https://github.com/facebook/flow/blob/master/lib/node.js
+
 # TypeScript语言
 
 ## 一、TypeScript概述
 
 TypeScript是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
+
+![](http://5coder.cn/img/1661157287_e5a684aca0ab3936570855fdde86b234.png)
 
 TypeScript 扩展了 JavaScript 的句法，所以任何现有的 JavaScript 程序可以不加改变的在 TypeScript下工作。TypeScript 是为大型应用之开发而设计，而编译时它产生 JavaScript 以确保兼容性。任何一种JavaScript运行环境都支持TypeScript开发。
 
