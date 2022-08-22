@@ -282,7 +282,10 @@ flow支持在代码编写过程中就进行类型推断，例如下面代码中�
 在绝大多数情况下一样，它可以帮我们推断出来变量，或者是参数的具体类型，但是没有必要给所有的成员都去添加，它可以更明确的去限制类型注解，而且对我们后期去理解，也是有帮助的可能去使用。
 
 ```js
-let num:number = 100;// num = 'string',此时只能赋值数字类型function foo():number {    return 100}// 此时函数只能返回数字类型，如果函数没有返回值，默认返回undefined，那么也会提醒报错。没有返回值的函数，我们需要将函数返回值类型标注为void
+let num:number = 100;  // num = 'string',此时只能赋值数字类型
+function foo():number {
+    return 100
+}// 此时函数只能返回数字类型，如果函数没有返回值，默认返回undefined，那么也会提醒报错。没有返回值的函数，我们需要将函数返回值类型标注为void
 ```
 
 ### 7.原始类型
@@ -435,6 +438,24 @@ passAny('string')
 
 passAny(100)
 ```
+
+### **13.Flow类型小结**
+
+https://flow.org/en/docs/types：Flow所有类型的文档
+
+https://www.saltycrane.com/cheat-sheets/flow-type/latest/：第三方类型手册
+
+### 14.Flow运行环境API
+
+- https://github.com/facebook/flow/blob/master/lib/core.js
+
+- https://github.com/facebook/flow/blob/master/lib/dom.js
+
+- https://github.com/facebook/flow/blob/master/lib/bom.js
+
+- https://github.com/facebook/flow/blob/master/lib/cssom.js
+
+- https://github.com/facebook/flow/blob/master/lib/node.js
 
 # TypeScript语言
 
