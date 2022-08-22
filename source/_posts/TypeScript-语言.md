@@ -195,42 +195,43 @@ add('Hello', 11)
 
    - 关闭VS Code语法校验：setting，搜索JavaScript validate，找到enable，取消勾选
 
-   - ```js
-     
-     // @flow
-     
-     function sum(a:number, b:number) {
-     	return a + b;
-     }
-     
-     sum(100, 100)
-     sum('100', '100')
-     
-     let num:number = 100
-     num = '100'
-     ```
 
-4. 使用
+```js
 
-   - ```shell
-     yarn flow init
-     yarn flow  # 第一次会很慢，后续会很快
-     # yarn flow stop # 结束flow
-     
-     #Error ---------------------------------------------------------------------------------------------------- 01/01.js:8:12
-     
-     #Cannot call `sum` with `'100'` bound to `b` because string [1] is incompatible with number [2]. [incompatible-call]
-     
-     #   01/01.js:8:12
-     #   8| sum('100', '100')
-     #                 ^^^^^ [1]
-     
-     #References:
-     #   01/01.js:3:26
-     #   3| function sum(a:number, b:number) {
-     #                               ^^^^^^ [2]
-     
-     ```
+// @flow
+
+function sum(a:number, b:number) {
+	return a + b;
+}
+
+sum(100, 100)
+sum('100', '100')
+
+let num:number = 100
+num = '100'
+```
+
+使用
+
+```shell
+yarn flow init
+yarn flow  # 第一次会很慢，后续会很快
+# yarn flow stop # 结束flow
+
+#Error ---------------------------------------------------------------------------------------------------- 01/01.js:8:12
+
+#Cannot call `sum` with `'100'` bound to `b` because string [1] is incompatible with number [2]. [incompatible-call]
+
+#   01/01.js:8:12
+#   8| sum('100', '100')
+#                 ^^^^^ [1]
+
+#References:
+#   01/01.js:3:26
+#   3| function sum(a:number, b:number) {
+#                               ^^^^^^ [2]
+
+```
 
 ### 3.编译移除注解
 
