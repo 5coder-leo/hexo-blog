@@ -1089,50 +1089,57 @@ ES中能够表示有结构的数据类型越来越多，从最早的数组和对
 
 > Chrome-console控制台
 
-```js
-console.log([]);  // 打印数组[]    length: 0    __proto__: Array(0)        ...        Symbol(Symbol.iterator): ƒ values()  // Symbol.iterator可迭代接口        Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}        __proto__: Object
-```
+![image-20220822100138523](http://5coder.cn/img/1661133699_d2688d1e1f8dce39260f8248906ed768.png)
 
-```js
-console.log(new Set());  // 打印SetSet(0) {}    [[Entries]]    size: (...)    __proto__: Set        add: ƒ add()        ...        Symbol(Symbol.iterator): ƒ values()  // Symbol.iterator可迭代接口        Symbol(Symbol.toStringTag): "Set"        get size: ƒ size()        __proto__: Object
-```
+![image-20220822100217757](http://5coder.cn/img/1661133738_b5a54153dc752f470515a5a85c6865be.png)
 
-```js
-console.log(new Map());  // 打印MapMap(0) {}    [[Entries]]    size: (...)    __proto__: Map        clear: ƒ clear()        ...        Symbol(Symbol.iterator): ƒ entries()  // Symbol.iterator可迭代接口        Symbol(Symbol.toStringTag): "Map"        get size: ƒ size()        __proto__: Object
-```
+![image-20220822100241194](http://5coder.cn/img/1661133761_22bf5332c64d90ac1dd9da489c6d2f70.png)
 
 继续看看Symbol.iterator到底实现了什么：
 
 > Chrome-console控制台
 
-```js
-const arr = ['foo', 'bar', 'baz']undefinedarr[Symbol.iterator]()Array Iterator {}	__proto__: Array Iterator    	next: ƒ next()		arguments: (...)        caller: (...)        length: 0        name: "next"		...const iterator = arr[Symbol.iterator]()undefinediterator.next(){value: "foo", done: false}
-```
+![image-20220822100416195](http://5coder.cn/img/1661133856_5577cfaa941e8c49807288e48c359d19.png)
 
-value中的就是数组中的第一个元素，done为false，当再次调用时，结果为相同的结构，此时的done为false。
+value中的就是数组中的第一个元素，done为false，当再次调用时，结果为相同的结构，此时的done为false。done属性的作用就是表示数组内部的属性是否全部遍历完成。
 
-> Chrome-console控制台
-
-```js
-iterator.next(){value: "bar", done: false}iterator.next(){value: "bar", done: true}
-```
-
-done属性的作用就是表示数组内部的属性是否全部遍历完成。
-
-模拟迭代器：
-
-```js
-// 迭代器（Iterator）const set = new Set(['foo', 'bar', 'baz'])const iterator = set[Symbol.iterator]()console.log(iterator.next())  // { value: 'foo', done: false }console.log(iterator.next())  // { value: 'bar', done: false }console.log(iterator.next())  // { value: 'baz', done: false }console.log(iterator.next())  // { value: undefined, done: true }console.log(iterator.next())  // { value: undefined, done: true }while (true) {  const current = iterator.next()  if (current.done) {    break // 迭代已经结束了，没必要继续了  }  console.log(current.value)}
-```
+![image-20220822101333654](http://5coder.cn/img/1661134414_3a2dfd7a898ec2f141cc78fcc0e44b5e.png)
 
 ### 2.实现iterator接口
 
 ```js
-// 实现可迭代接口（Iterable）const obj = {    // 实现了可迭代接口，Iterable，约定内部必须有用于范湖迭代器的iterator方法    [Symbol.iterator]: function () {        // 实现了迭代器接口，iterator其内部有用于迭代的next方法        return {            next: function () {                // 迭代结果接口，iterationResult，约定对象内部必须要有value属性，来表示当前被迭代到的数据，值为任意类型，done属性用来表示迭代是否结束                return {                    value: 'zce',                    done: true                }            }        }    }}
+const obj = {
+  [Symbol.iterator]: function () {
+    return {
+      next: function () {
+        return {
+          value: 'zce',
+          done: true
+        }
+      }
+    }
+  }
+}
 ```
 
 ```js
-const obj = {    store: ['foo', 'bar', 'baz'],    [Symbol.iterator]: function () {        let index = 0        const self = this        return {            next: function () {                const result = {                    value: self.store[index],                    done: index >= self.store.length                }                index++                return result            }        }    }}
+const obj = {
+  store: ['foo', 'bar', 'baz'],
+  [Symbol.iterator]: function () {
+    let index = 0
+    const self = this
+    return {
+      next: function () {
+        const result = {
+          value: self.store[index],
+          done: index >= self.store.length
+        }
+        index++
+        return result
+      }
+    }
+  }
+}
 ```
 
 ### 3.迭代器模式
@@ -1140,7 +1147,55 @@ const obj = {    store: ['foo', 'bar', 'baz'],    [Symbol.iterator]: function ()
 迭代器模式（特别是在 ECMAScript 这个语境下）描述了一个方案，即可以把有些结构称为“可迭代对象”（iterable），因为它们实现了正式的 Iterable 接口，而且可以通过迭代器 Iterator 消费。
 
 ```js
-// 迭代器设计模式// 场景：你我协同开发一个任务清单应用// 我的代码 ===============================const todos = {  life: ['吃饭', '睡觉', '打豆豆'],  learn: ['语文', '数学', '外语'],  work: ['喝茶'],  // 提供统一遍历访问接口  each: function (callback) {    const all = [].concat(this.life, this.learn, this.work)    for (const item of all) {      callback(item)    }  },  // 提供迭代器（ES2015 统一遍历访问接口）  [Symbol.iterator]: function () {    const all = [...this.life, ...this.learn, ...this.work]    let index = 0    return {      next: function () {        return {          value: all[index],          done: index++ >= all.length        }      }    }  }}// 你的代码 ===============================// 实现统一遍历接口之前// for (const item of todos.life) {//   console.log(item)// }// for (const item of todos.learn) {//   console.log(item)// }// for (const item of todos.work) {//   console.log(item)// }// 实现统一遍历接口之后todos.each(function (item) {  console.log(item)})console.log('-------------------------------')for (const item of todos) {  console.log(item)}
+// 迭代器设计模式// 场景：你我协同开发一个任务清单应用//
+// 我的代码 ===============================
+const todos = {
+  life: ['吃饭', '睡觉', '打豆豆'],
+  learn: ['语文', '数学', '外语'],
+  work: ['喝茶'],
+  // 提供统一遍历访问接口
+  each: function (callback) {
+    const all = [].concat(this.life, this.learn, this.work)
+    for (const item of all) {
+      callback(item)
+    }
+  },
+  // 提供迭代器（ES2015 统一遍历访问接口）
+  [Symbol.iterator]: function () {
+    const all = [...this.life, ...this.learn, ...this.work]
+    let index = 0
+    return {
+      next: function () {
+        return {
+          value: all[index],
+          done: index++ >= all.length
+        }
+      }
+    }
+  }
+}// 你的代码 ===============================// 实现统一遍历接口之前//
+// for (const todoLife of todos.life) {
+//   console.log(todoLife)
+// }
+// for (const todoLearn of todos.learn) {
+//   console.log(todoLearn)
+// }
+// for (const todoWork of todos.work) {
+//   console.log(todoWork)
+// }
+
+
+// todos.each(function (item) {
+//   console.log(item)
+// })
+
+for (const todo of todos) {
+  console.log(todo)
+}
+
+// for (const todo of todos.life) {
+//   console.log(todo)
+// }
 ```
 
 ## 十九、生成器及生成器的应用
