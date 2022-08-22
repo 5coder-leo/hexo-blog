@@ -9,7 +9,7 @@ top: false
 
 # TypeScript语言-前置知识
 
-## ①、强类型与弱类型、静态类型与动态类型
+## 一、强类型与弱类型、静态类型与动态类型
 
 ### 1.强类型与弱类型（类型安全）
 
@@ -441,9 +441,13 @@ passAny(100)
 
 ### **13.Flow类型小结**
 
-https://flow.org/en/docs/types：Flow所有类型的文档
+Flow所有类型的文档：
 
-https://www.saltycrane.com/cheat-sheets/flow-type/latest/：第三方类型手册
+https://flow.org/en/docs/types
+
+第三方类型手册
+
+https://www.saltycrane.com/cheat-sheets/flow-type/latest/
 
 ### 14.Flow运行环境API
 
@@ -462,6 +466,8 @@ https://www.saltycrane.com/cheat-sheets/flow-type/latest/：第三方类型手�
 ## 一、TypeScript概述
 
 TypeScript是一种由微软开发的自由和开源的编程语言。它是 JavaScript 的一个超集，而且本质上向这个语言添加了可选的静态类型和基于类的面向对象编程。
+
+![image-20220822163446888](http://5coder.cn/img/1661157287_e5a684aca0ab3936570855fdde86b234.png)
 
 TypeScript 扩展了 JavaScript 的句法，所以任何现有的 JavaScript 程序可以不加改变的在 TypeScript下工作。TypeScript 是为大型应用之开发而设计，而编译时它产生 JavaScript 以确保兼容性。任何一种JavaScript运行环境都支持TypeScript开发。
 
