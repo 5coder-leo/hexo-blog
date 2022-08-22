@@ -30,6 +30,8 @@ cover: false
 - 垃圾回收与常见的GC算法
 - V8引擎的垃圾回收
   - V8中的GC算法实现垃圾回收
+- Performance工具
+- 代码优化实例
 
 
 ## 二、内存管理
@@ -84,7 +86,7 @@ obj = null
 
 JavaScript中的可达对象
 
-- 可以访问到的对象就是科大对象（引用、作用域链）
+- 可以访问到的对象就是可达对象（引用、作用域链）
 - 可达的标准就是从根触发是否能够被找到
 - JavaScript中的根可以理解为全局变量
 
@@ -121,7 +123,7 @@ console.log(obj)
 ![](http://5coder.cn/img/dnkGj8bH4vzoZCp.png)
 
 
-如果我们在代码中做一些操作，比如使用delete将obj上的o1的应用以及o2中对obj1的应用删除掉，那么出现下面的情况：
+如果我们在代码中做一些操作，比如使用delete将obj上的o1的应用以及o2中对obj1的应用删除掉，那么出现下面的情况：o1无法被找到，则被标记为垃圾。
 
 ![](http://5coder.cn/img/WgRhFJ7xmadZzfu.png)
 

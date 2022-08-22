@@ -1089,21 +1089,21 @@ ES中能够表示有结构的数据类型越来越多，从最早的数组和对
 
 > Chrome-console控制台
 
-![image-20220822100138523](http://5coder.cn/img/1661133699_d2688d1e1f8dce39260f8248906ed768.png)
+![](http://5coder.cn/img/1661133699_d2688d1e1f8dce39260f8248906ed768.png)
 
-![image-20220822100217757](http://5coder.cn/img/1661133738_b5a54153dc752f470515a5a85c6865be.png)
+![](http://5coder.cn/img/1661133738_b5a54153dc752f470515a5a85c6865be.png)
 
-![image-20220822100241194](http://5coder.cn/img/1661133761_22bf5332c64d90ac1dd9da489c6d2f70.png)
+![](http://5coder.cn/img/1661133761_22bf5332c64d90ac1dd9da489c6d2f70.png)
 
 继续看看Symbol.iterator到底实现了什么：
 
 > Chrome-console控制台
 
-![image-20220822100416195](http://5coder.cn/img/1661133856_5577cfaa941e8c49807288e48c359d19.png)
+![](http://5coder.cn/img/1661133856_5577cfaa941e8c49807288e48c359d19.png)
 
 value中的就是数组中的第一个元素，done为false，当再次调用时，结果为相同的结构，此时的done为false。done属性的作用就是表示数组内部的属性是否全部遍历完成。
 
-![image-20220822101333654](http://5coder.cn/img/1661134414_3a2dfd7a898ec2f141cc78fcc0e44b5e.png)
+![](http://5coder.cn/img/1661134414_3a2dfd7a898ec2f141cc78fcc0e44b5e.png)
 
 ### 2.实现iterator接口
 
