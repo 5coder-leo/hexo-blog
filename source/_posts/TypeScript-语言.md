@@ -137,7 +137,7 @@ obj.foo();
 示例二：非预期结果
 
 ```js
-function sun(a, b) {
+function sum(a, b) {
 	return a + b;
 }
 
@@ -162,7 +162,7 @@ console.log(obj['true']);  // 100
 
 ### 1.概述
 
-flow是 facebook 出品的 JavaScript **静态类型检查工具，https://flow.org/en/docs/usage/**这是其官方文档链接。Vue.js 的源码利用了Flow 做了静态类型检查。
+flow是 facebook 出品的 JavaScript **静态类型检查工具，https://flow.org/en/docs/usage/**  这是其官方文档链接。Vue.js 的源码利用了Flow 做了静态类型检查。
 
 **JavaScript** 是**动态类型语言**，它的灵活性有目共睹，但是过于灵活的副作用是很容易就写出**非常隐蔽的隐患代码**，在**编译期**甚至看上去都**不会报错**，但在**运行阶段**就可能出现**各种奇怪的 bug**
 
@@ -196,6 +196,7 @@ add('Hello', 11)
    - 关闭VS Code语法校验：setting，搜索JavaScript validate，找到enable，取消勾选
 
    - ```js
+     
      // @flow
      
      function sum(a:number, b:number) {
