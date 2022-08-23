@@ -670,7 +670,7 @@ banner:
 icp:
   enable: true
   url: 'https://beian.miit.gov.cn'
-  text: '粤ICP备2021053102号'
+  text: '粤ICP备2022101498号'
 
 # CDN访问加速
 # 第一次使用本功能，一定要先配置url，再`hexo cl && hexo g && hexo d`部署到GitHub的仓库，注意！必须是GitHub的仓库！
