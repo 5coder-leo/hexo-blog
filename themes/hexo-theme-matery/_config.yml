@@ -647,8 +647,8 @@ subtitle:
   startDelay: 300 # 开始延迟
   typeSpeed: 100 # 打字速度
   backSpeed: 50 # 删除速度
-  sub1: 从来没有真正的绝境, 只有心灵的迷途
-  sub2: Never really desperate, only the lost of the soul
+  sub1: 有道无术，术尚可求。有术无道，止于术！
+#  sub2: There is a way without art, but art can be found. There is art without way, and it ends in art！
 
 # 手机二级菜单.
 navMenu:
