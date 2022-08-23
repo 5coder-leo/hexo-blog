@@ -8,7 +8,8 @@ category: 大前端
 password:
 keywords: Vue
 top:
-cover:
+cover: true
+coverImg: http://5coder.cn/img/1661217401_79988000d14178959b0aec688b620b9e.jpg
 ---
 
 # 一、Vue基础结构

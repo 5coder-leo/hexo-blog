@@ -1,3 +1,4 @@
+---
 title: Vue.js 源码剖析-虚拟DOM
 author: 5coder
 tags: Vue虚拟DOM
@@ -5,9 +6,10 @@ category: 大前端
 keywords: Vue源码-虚拟DOM
 abbrlink: 23019
 date: 2021-07-09 05:27:00
-top:
-cover:
+top: true
+cover: true
 ---
+
 # Vue.js 源码剖析-虚拟DOM
 
 ------

@@ -5,6 +5,7 @@ tags: Vue源码解析
 category: 大前端(杂识)
 abbrlink: 40057
 date: 2021-07-18 21:34:37
+cover: true
 ---
 
 ## 1.请简述Vue首次渲染过程

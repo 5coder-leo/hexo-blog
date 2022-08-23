@@ -6,8 +6,8 @@ category: 大前端
 keywords: Vuex
 abbrlink: 31096
 date: 2021-07-19 21:22:53
-top:
-cover:
+top: true
+cover: true
 
 
 ---

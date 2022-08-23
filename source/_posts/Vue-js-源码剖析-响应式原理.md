@@ -8,8 +8,9 @@ abbrlink: 42659
 date: 2021-06-21 21:30:13
 password:
 top:
-cover:
-
+cover: true
+coverImg: http://5coder.cn/img/1661217798_0c9580b8c88e7fa7391117d7669cfe83.jpg
+img: http://5coder.cn/img/1661217798_0c9580b8c88e7fa7391117d7669cfe83.jpg
 ---
 
 # Vue源码解析-响应式原理

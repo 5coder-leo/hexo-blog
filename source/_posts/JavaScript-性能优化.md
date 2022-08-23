@@ -5,7 +5,8 @@ category: 大前端
 abbrlink: 53564
 date: 2021-05-19 22:54:45
 top: false
-cover: false
+cover: true
+coverImg: http://5coder.cn/img/1661217409_231c34477d76b417436b72abc101413b.jpg
 ---
 
 ## 一、性能优化介绍

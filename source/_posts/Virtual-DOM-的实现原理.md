@@ -11,8 +11,8 @@ keywords:
 abbrlink: 17380
 date: 2021-06-04 05:37:23
 top: true
-cover:
-img: /medias/featureimages/18.jpg
+cover: true
+coverImg: http://5coder.cn/img/1661217439_68fc15c674f0996440d22e10853ec9a8.jpg
 ---
 
 # Virtual DOM的实现原理
