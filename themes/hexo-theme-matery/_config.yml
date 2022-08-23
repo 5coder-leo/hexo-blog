@@ -16,9 +16,9 @@ menu:
   About:
     url: /about
     icon: fas fa-user-circle
-  Contact:
-    url: /contact
-    icon: fa fa-comments
+#  Contact:
+#    url: /contact
+#    icon: fa fa-comments
   Friends:
     url: /friends
     icon: fas fa-address-book
@@ -368,9 +368,9 @@ valine:
   enable: false
   appId: BRF4be681muYUe2DWv5HkFRO-gzGzoHsz
   appKey: meWxgwz0afpFwqHpqO6CkD40
-  notify: true
-  verify: true
-  visitor: true
+  notify: false
+  verify: false
+  visitor: false
   avatar: 'robohash' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
   pageSize: 10
   placeholder: '道友，聊两句...' # Comment Box placeholder
@@ -381,16 +381,16 @@ valine:
 # MiniValine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
 # See: https://github.com/MiniValine/MiniValine
 minivaline:
-  enable: true
+  enable: false
   appId: BRF4be681muYUe2DWv5HkFRO-gzGzoHsz # Your leancloud application appid
   appKey: meWxgwz0afpFwqHpqO6CkD40 # Your leancloud application appkey
   mode: DesertsP # DesertsP or xCss
   placeholder: '道友，聊两句...' # Comment box placeholder
-  math: true # Support MathJax.
-  md: true # Support Markdown.
-  enableQQ: true # Enable QQ avatar API.
+  math: false # Support MathJax.
+  md: false # Support Markdown.
+  enableQQ: false # Enable QQ avatar API.
   NoRecordIP: false # Do not record commenter IP.
-  visitor: true # Article reading statistics.
+  visitor: false # Article reading statistics.
   maxNest: 6 # Sub-comment maximum nesting depth.
   pageSize: 6 # Pagination size.
   adminEmailMd5: e611edc239e400df892ab629424f7c0e # The MD5 of Admin Email to show Admin Flag.[Just Only DesertsP Style mode]
@@ -568,18 +568,6 @@ featureImages:
   - /medias/featureimages/54.jpg
   - /medias/featureimages/55.jpg
   - /medias/featureimages/56.jpg
-  - /medias/featureimages/57.jpg
-  - /medias/featureimages/58.jpg
-  - /medias/featureimages/59.jpg
-  - /medias/featureimages/60.jpg
-  - /medias/featureimages/61.jpg
-  - /medias/featureimages/62.jpg
-  - /medias/featureimages/63.jpg
-  - /medias/featureimages/64.jpg
-  - /medias/featureimages/65.jpg
-  - /medias/featureimages/66.jpg
-  - /medias/featureimages/67.jpg
-  - /medias/featureimages/68.jpg
 
 # default configs that the default policy for every articles/posts
 # default 配置文章的默认转载规则
