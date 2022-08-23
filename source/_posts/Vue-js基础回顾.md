@@ -8,7 +8,7 @@ category: 大前端
 password:
 keywords: Vue
 top:
-cover: true
+cover: false
 coverImg: http://5coder.cn/img/1661217401_79988000d14178959b0aec688b620b9e.jpg
 ---
 

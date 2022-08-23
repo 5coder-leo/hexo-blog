@@ -11,7 +11,7 @@ keywords:
 - Vue-Router
 - Vue-Router原理
 top: true
-cover: true
+cover: false
 coverImg: http://5coder.cn/img/1661217429_955264b53498da1b3052b200861a2b92.jpg
 ---
 

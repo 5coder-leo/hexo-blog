@@ -4,7 +4,7 @@ tags: ECMAScript
 category: 大前端
 abbrlink: 1486
 date: 2021-05-19 22:54:24
-cover: true
+cover: false
 coverImg: http://5coder.cn/img/1661217433_40033c5d4c0c38ae319f0d9e269cccff.jpg
 ---
 
