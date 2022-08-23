@@ -105,8 +105,6 @@ console.log(arr)
  *  06 代码执行
  */
 
-
-
 // 如下图
 ```
 
@@ -114,11 +112,52 @@ console.log(arr)
 
 ### 4.闭包堆栈处理
 
+```js
+var a = 1
+function foo() {
+  var b = 2
+  return function (c) {
+    console.log(c + b++)
+  }
+}
+
+var f = foo()
+f(5)
+f(10)
+
+/*
+* 1.闭包：是一种机制
+*   保护：当前上下文当中的变量与其他的上下文中变量互不干扰
+*   保存：当前上下文中的数据（对地址）被当前上下文以外的上下文忠的变量引用，这个数据就保存下来
+* 2.闭包：
+*   函数调用想成了一个全新的私有上下文，在函数调用之后当前上下文不被释放就是闭包（临时不被释放）
+*
+* */
+// 如下图
+```
+
 
 
 ![04-闭包与堆栈执行](http://5coder.cn/img/1661246438_d9698b81f9e56f58defa6f26c9f7569e.png)
 
 ### 5.闭包与垃圾回收
+
+```js
+let a = 10
+function foo(a) {
+  return function (b) {
+    console.log(b + (++a))
+    
+  }
+}
+
+let fn = foo(10)
+fn(5)
+foo(6)(7)
+fn(20)
+console.log(a)
+// 如下图
+```
 
 
 

@@ -669,7 +669,7 @@ banner:
 #ICP备案信息尾部显示
 icp:
   enable: true
-  url: ''
+  url: 'https://beian.miit.gov.cn'
   text: '粤ICP备2021053102号'
 
 # CDN访问加速
