@@ -821,6 +821,8 @@ function doSomething2(part, chapter) {
 doSomething2('ES2015', 6)
 ```
 
+![减少判断层](http://5coder.cn/img/1661332323_d67dd1968f9dabc5a536cc4549047e5e.png)
+
 ### 11.减少作用域链查找层级
 
 代码示例：
