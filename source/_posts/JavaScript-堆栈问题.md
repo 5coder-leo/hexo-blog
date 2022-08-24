@@ -165,17 +165,104 @@ console.log(a)
 
 ### 6.循环添加事件
 
-![06-循环添加事件](http://5coder.cn/img/1661246456_b113bf25d47870695d5a1d730966c7fd.png)
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>循环添加事件</title>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<script>
+  var aButtons = document.querySelectorAll('button')
+  console.log(aButtons)
+  /*
+  * 基础
+  for (var i = 0; i < aButtons.length; i++) {
+    aButtons[i].onclick = function () {
+      console.log(`当前的索引值为${i}`)
+    }
+  }
+   */
+
+  /*  for (var i = 0; i < aButtons.length; i++) {
+      (function (i) {
+        aButtons[i].onclick = function () {
+          console.log(`当前的索引值为${i}`)
+        }
+      })(i)
+    }*/
+
+  /*  for (var i = 0; i < aButtons.length; i++) {
+      aButtons[i].onclick = (function (i) {
+        return function () {
+          console.log(`当前的索引值为${i}`)
+        }
+      })(i)
+    }*/
 
 
+  /*  for (let i = 0; i < aButtons.length; i++) {
+      aButtons[i].onclick = function () {
+        console.log(`当前的索引值为${i}`)
+      }
+    }*/
 
-### 7.事件添加底层分析
+  for (var i = 0; i < aButtons.length; i++) {
+    aButtons[i].myIndex = i
+    aButtons[i].onclick = function () {
+      console.log(`当前的索引值为${this.myIndex}`)
+    }
+  }
 
+</script>
+</body>
+</html>
 
+```
 
+循环添加事件-底层执行分析
 
+![循环添加事件](http://5coder.cn/img/1661246456_b113bf25d47870695d5a1d730966c7fd.png)
 
-### 8.事件委托
+### 8.循环添加事件-事件委托方法实现
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button index="1">按钮1</button>
+  <button index="2">按钮2</button>
+  <button index="3">按钮3</button>
+</body>
+<script>
+  document.body.onclick = function (event) {
+    var target = event.target,
+      targetDom = target.tagName
+    if (targetDom === 'BUTTON') {
+      var index = target.getAttribute('index')
+      console.log(`当前点击的是第${index}个按钮`)
+    }
+  }
+</script>
+</html>
+<!--如下图-->
+```
+
+![事件委托](http://5coder.cn/img/1661307355_b8f4f25c38bc099ea4aea74e6f3a538c.png)
 
 ### 9.变量局部化
 
@@ -185,6 +272,8 @@ console.log(a)
 
 ### 12.防抖与节流
 
-#### **防抖函数实现**
+- #### **防抖函数实现**
 
-#### **节流函数实现**
+  
+
+- #### **节流函数实现**
