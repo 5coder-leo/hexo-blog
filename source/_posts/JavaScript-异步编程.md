@@ -36,21 +36,17 @@ console.log('Global end')
 // Global end
 ```
 
-复制地址到浏览器地址栏查看动图演示：
-
-![](http://5coder.cn/img/202208152208328.gif)
-
-http://5coder.cn/img/202208152208328.gif
+![无法查看时复制链接到浏览器观看：http://5coder.cn/img/202208152208328.gif](http://5coder.cn/img/202208152208328.gif)
 
 分析：
 
-> - 首先分析代码结构，本段代码为同步模式，js在读取到代码时，先将一个（anonymous）匿名函数放到调用栈。
+> 1. 首先分析代码结构，本段代码为同步模式，js在读取到代码时，先将一个（anonymous）匿名函数放到调用栈。
 >
-> - 在读取到第一行console.log('Global begin')时，将其压到调用栈，随后去执行，当控制台打印出结果后，将其弹出调用栈，继续下一行代码；
+> 2. 在读取到第一行console.log('Global begin')时，将其压到调用栈，随后去执行，当控制台打印出结果后，将其弹出调用栈，继续下一行代码；
 >
-> - 在读取到bar函数及foo函数时，由于其并未执行，因此调用栈内无执行任务；
-> - 在读取到foo()函数调用时，首先将foo()压入调用栈，遇console.log('Foo task')代码，将其压入调用栈，执行完毕后弹出调用栈。随后将bar()压入调用栈，程序去bar()函数内部解析，将console.log('Bar task')压入调用栈。foo()函数执行完毕后，依次将bar()、foo()函数弹出调用栈；
-> - 最后将console.log('Global end')压入调用栈并执行，随后将其弹出，代码运行完成，将(anonymous)弹出调用栈，程序完全结束。
+> 3. 在读取到bar函数及foo函数时，由于其并未执行，因此调用栈内无执行任务；
+> 4. 在读取到foo()函数调用时，首先将foo()压入调用栈，遇console.log('Foo task')代码，将其压入调用栈，执行完毕后弹出调用栈。随后将bar()压入调用栈，程序去bar()函数内部解析，将console.log('Bar task')压入调用栈。foo()函数执行完毕后，依次将bar()、foo()函数弹出调用栈；
+> 5. 最后将console.log('Global end')压入调用栈并执行，随后将其弹出，代码运行完成，将(anonymous)弹出调用栈，程序完全结束。
 
 ### 二、异步模式
 
@@ -84,7 +80,7 @@ console.log('global end')
 
 复制地址到浏览器地址栏查看动图演示：
 
-http://5coder.cn/img/202208152208762.gif
+![无法查看时复制链接到浏览器观看：http://5coder.cn/img/202208152208762.gif](http://5coder.cn/img/202208152208762.gif)
 
 分析：
 
@@ -149,6 +145,8 @@ $.get('url1', function (data1) {
 因此提出`Promise`承诺，即在回调函数中，承诺在异步完成后下一步干什么。
 
 `Promise`存在三种状态，及承诺开始`pending`，承诺兑现`fulfilled`以及承诺失败`rejected`。并且，承诺的状态一旦确定就不可在被改变，即当状态为`fulfilled`时，此`promise`的状态就不可再变为`rejected`，反之同样。
+
+[传送：Promise基本使用](http://5coder.cn/2021/0519741.html)
 
 `fulfilled`与`rejected`存在`onFulfilled`和`onRejected`状态。
 
