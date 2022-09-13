@@ -6,7 +6,7 @@ abbrlink: 741
 date: 2021-05-19 22:31:14
 ---
 
-## 手写Promise源码
+## Promise对象使用回顾
 
 抽象表达：Promise 是JS 中进行异步编程的新的解决方案
 具体表达：Promise 是一个构造函数，promise对象用来封装一个异步操作并可以获取其结果
