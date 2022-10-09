@@ -22,14 +22,12 @@ menu:
   Friends:
     url: /friends
     icon: fas fa-address-book
-  Sources:
-    url: /sources
-    icon: fas fa-book
-    children:
-      - name: FrontEnd
-        url: /frontEnd
-      - name: Python
-        url: /python
+#  Sources:
+#    url: /sources
+#    icon: fas fa-book
+#    children:
+#      - name: FrontEnd
+#        url: /frontEnd
 
 
   # 二级菜单写法如下
