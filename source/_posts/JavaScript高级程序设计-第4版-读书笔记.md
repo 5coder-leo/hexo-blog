@@ -7,7 +7,7 @@ tags: JavaScript高级程序设计
 category: JavaScript高级程序设计
 password:
 keywords:
-top:
+top: true
 cover:
 ---
 
