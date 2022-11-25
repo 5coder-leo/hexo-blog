@@ -106,9 +106,9 @@ theme: hexo-theme-matery
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-#  - type: 'git'
-#    repository:  git@120.25.218.79:/home/www/gitRepo/blog.git
-#    branch: master
+  - type: 'git'
+    repository:  git@120.25.218.79:/home/www/gitRepo/blog.git
+    branch: master
   - type: 'git'
     repo: git@github.com:5coder-leo/5coder-leo.github.io
     branch: main
